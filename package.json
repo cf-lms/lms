@@ -2,7 +2,7 @@
   "name": "lms",
   "version": "0.1.0",
   "description": "an lms for use by codefellows",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test"
   },
@@ -19,5 +19,8 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
   }
 }
