@@ -17,13 +17,13 @@ module.exports = React.createClass({
 
   render: function() {
     return(
-      <div>
+      <li>
         <span dangerouslySetInnerHTML={this.rawMarkup()} />
         <p>{this.props.dueDate}</p>
         <form onSubmit={this.handleSubmit}>
           <input type="submit" value="Submit Assignment" />
         </form>
-      </div>
+      </li>
     );
   }
 });
