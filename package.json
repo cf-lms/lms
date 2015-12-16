@@ -20,6 +20,7 @@
     "babel-core": "^6.3.17",
     "babel-loader": "^6.2.0",
     "babel-preset-react": "^6.3.13",
+    "body-parser": "^1.14.1",
     "chai": "^3.4.1",
     "gulp-babel": "^6.1.1",
     "marked": "^0.3.5",
