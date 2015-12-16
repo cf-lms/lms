@@ -18,6 +18,7 @@
   "homepage": "https://github.com/cf-lms/lms#readme",
   "devDependencies": {
     "chai": "^3.4.1",
+    "eslint-plugin-react": "^3.11.3",
     "gulp": "^3.9.0",
     "gulp-concat-css": "^2.2.0",
     "gulp-sass": "^2.1.1",
