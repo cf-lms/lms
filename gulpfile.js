@@ -28,15 +28,15 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('jscs', function() {
-	return gulp.src(appFiles)
-	.pipe(jscs())
-	.pipe(stylish());
+  return gulp.src(appFiles)
+  .pipe(jscs())
+  .pipe(stylish());
 });
 
 gulp.task('lint', function () {
-	return gulp.src(['app/**/*.js', '!node_modules/**'])
-	.pipe(eslint.format())
-	.pipe(eslint.failAfterError());
+  return gulp.src(['app/**/*.js', '!node_modules/**'])
+  .pipe(eslint.format())
+  .pipe(eslint.failAfterError());
 });
 
 gulp.task('webpack:dev', function() {
