@@ -30,20 +30,7 @@
     "gulp-sass": "^2.1.1",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-watch": "^4.3.5",
-<<<<<<< HEAD
     "minify": "^2.0.2",
-||||||| merged common ancestors
-    "minify": "^2.0.2",
-    "mocha": "^2.3.4"
-||||||| merged common ancestors
-    "mocha": "^2.3.4"
-=======
-    "gulp-babel": "^6.1.1",
-    "marked": "^0.3.5",
-=======
-    "marked": "^0.3.5",
-    "minify": "^2.0.2",
->>>>>>> 5ccdf731b4d48143d2d717ebe64469b9f4caaadf
     "mocha": "^2.3.4",
     "marked": "^0.3.5",
     "webpack-stream": "^3.1.0"
