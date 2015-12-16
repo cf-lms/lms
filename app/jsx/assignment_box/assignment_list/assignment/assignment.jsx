@@ -12,7 +12,6 @@ module.exports = React.createClass({
   handleSubmit: function(e) {
     e.preventDefault();
     alert('Thanks for turning the assignment');
-
   },
 
   render: function() {
