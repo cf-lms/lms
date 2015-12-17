@@ -1,6 +1,13 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var courseRouter = require(__dirname + '/routes/course_routes.js');
+var assignmentRouter = require(__dirname + '/routes/assignment_routes.js');
 var app = express();
+
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/lms_dev');
+
+app.use('/api', courseRouter);
+app.use('/api', assignmentRouter);
 
 app.use('/', express.static(__dirname + '/build'));
 
