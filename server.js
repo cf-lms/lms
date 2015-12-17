@@ -1,6 +1,9 @@
 var express = require('express');
+var mongoose = require('mongoose');
 var app = express();
 var authRouter = require(__dirname + '/routes/auth_routes');
+
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/lms_dev');
 
 app.use('/', express.static(__dirname + '/build'));
 app.use('/auth', authRouter);
