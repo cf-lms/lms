@@ -52,7 +52,7 @@ describe('the assignment routes', function() {
       }.bind(this));
     });
 
-    it('should be able to update a assignment', function(done) {
+    it('should be able to update an assignment', function(done) {
       chai.request('localhost:3000')
         .put('/api/assignments/' + this.assignment._id)
         .send({type: 'code'})
@@ -64,7 +64,7 @@ describe('the assignment routes', function() {
       }.bind(this));
     });
 
-    it('should be able to delete a assignment', function(done) {
+    it('should be able to delete an assignment', function(done) {
       chai.request('localhost:3000')
         .delete('/api/assignments/' + this.assignment._id)
         .end(function(err, res) {
