@@ -1,11 +1,12 @@
 // Compile all SCSS files into a single file
 
 // Import Partials: Files used across entire project
-@import 'partials/reset';
-@import 'partials/colors';
-@import 'partials/mixins';
-@import 'partials/state';
-@import 'partials/typography';
+@import 'reset';
+@import 'colors';
+@import 'icons';
+@import 'mixins';
+@import 'state';
+@import 'typography';
 
 // Import Modules: Specific Objects
 @import 'modules/inputs';
@@ -14,4 +15,4 @@
 @import 'modules/forms';
 
 // Import Base: Base layer.
-@import 'partials/base';
+@import 'base';
