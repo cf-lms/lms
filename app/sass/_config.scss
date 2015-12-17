@@ -25,9 +25,20 @@ $heading-san-serif: 'Proxima', sans-serif;
 //Heading
 $heading-bg: $color-scheme1;
 
+//Container
+$container: {
+  @include container-format;
+}
+
 //Buttons
-$button-ok; // light green button
-$button-shit; // yellow button
-$button-fuck;// red button
+$button-ok: {
+  @include lms-button; // light green button
+}
 
+$button-shit: {
+  @include lms-button($color-scheme6); // yellow button
+}
 
+$button-fuck: {
+  @include lms-button($color-scheme7); // red button
+}
