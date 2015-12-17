@@ -1,0 +1,8 @@
+.form {
+  @include container-format($color-scheme1)
+  @include text-format($color-scheme5);
+  color: $color-scheme5;
+  padding: 30px, 10px, 30px, 20px;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
