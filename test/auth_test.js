@@ -3,6 +3,8 @@ var chaihttp = require('chai-http');
 chai.use(chaihttp);
 var expect = chai.expect;
 
+require(__dirname + '/../server');
+
 describe('The auth routes', function() {
   it('should redirect', function(done) {
     chai.request('localhost:3000')
