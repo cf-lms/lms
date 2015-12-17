@@ -51,18 +51,6 @@ describe('the course routes', function() {
       }.bind(this));
     });
 
-    // it('should return a specific course', function(done) {
-    //   chai.request('localhost:3000')
-    //     .get('/api/courses/' + this.course._id)
-    //     .end(function(err, res) {
-    //       expect(err).to.eql(null);
-    //       expect(res.title).to.eql('java');
-    //       expect(res.description).to.eql('short for javascript');
-    //       expect(Array.isArray(res.weeks)).to.eql(true);
-    //       done();
-    //   }.bind(this));
-    // });
-
     it('should be able to update a course', function(done) {
       chai.request('localhost:3000')
         .put('/api/courses/' + this.course._id)

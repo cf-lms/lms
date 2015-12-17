@@ -52,18 +52,6 @@ describe('the assignment routes', function() {
       }.bind(this));
     });
 
-    // it('should return a specific assignment', function(done) {
-    //   chai.request('localhost:3000')
-    //     .get('/api/assignments/' + this.testAssignment._id)
-    //     .end(function(err, res) {
-    //       expect(err).to.eql(null);
-    //       expect(res[0].title).to.eql('learn C');
-    //       expect(res[0].description).to.eql('the hard way');
-    //       expect(res[0].courseID).to.eql('cCourse');
-    //       done();
-    //   }).bind(this);
-    // });
-
     it('should be able to update a assignment', function(done) {
       chai.request('localhost:3000')
         .put('/api/assignments/' + this.assignment._id)
