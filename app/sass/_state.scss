@@ -1,0 +1,28 @@
+a:link {
+  color: $color-scheme2;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $color-scheme3;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: $color-scheme1;
+}
+
+input:focus, input:hover {
+  background-color: $color-scheme5;
+  border: 1px solid $color-scheme1;
+}
+
+.button:active {
+  position:relative;
+  top:1px;
+}
+
+.button:hover {
+  position:relative;
+  top:1px;
+}

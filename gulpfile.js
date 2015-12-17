@@ -33,7 +33,7 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('jscs', function() {
-  return gulp.src(appFiles)
+  return gulp.src('app/**/*.js')
   .pipe(jscs())
   .pipe(stylish());
 });
