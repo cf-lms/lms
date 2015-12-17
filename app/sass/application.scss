@@ -8,8 +8,12 @@
 @import 'typography';
 
 //Import Modules: Specific Objects
-@import 'inputs';
 @import 'buttons';
+@import 'inputs';
+@import 'lists';
+
+//Import Config: Configuration layer
+@import 'config';
 
 //Import Base: Base layer
-@import 'partials/base';
+@import 'base';
