@@ -1,0 +1,7 @@
+// network actions
+module.exports.REQUEST_ASSIGNMENTS = 'REQUEST_ASSIGNMENTS';
+module.exports.REQUEST_ASSIGNMENTS = 'RECEIVE_ASSIGNMENTS';
+module.exports.INVALIDATE_ASSIGNMENTS = 'INVALIDATE_ASSIGNMENTS';
+
+// ui actions
+module.exports.ADD_ASSIGNMENT = 'ADD_ASSIGNMENT';

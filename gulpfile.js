@@ -49,7 +49,7 @@ gulp.task('webpack:dev', function() {
           exclude: /node_modules/,
           loader: 'babel',
           query: {
-            presets: ['react']
+            presets: ['react', 'es2015']
           }
         }
       ]
