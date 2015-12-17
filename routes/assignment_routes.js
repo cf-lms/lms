@@ -26,6 +26,7 @@ assignmentRouter.post('/assignments', jsonParser(), function(req, res) {
 assignmentRouter.put('/assignments/:id', jsonParser(), function(req, res) {
   var assignmentData = req.body;
   delete assignmentData._id;
+
   Assignment.update({_id: req.params.id}, assignmentData, function(err) {
     if (err) return handleError(err, res);
 

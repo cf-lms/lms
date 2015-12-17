@@ -7,6 +7,7 @@ var Course = require(__dirname + '/../models/course.js');
 var courseRouter = module.exports = exports = express.Router();
 
 courseRouter.get('/all-courses', function(req, res) {
+
   Course.find({}, function(err, data) {
     if (err) return handleError(err, res);
 
@@ -27,6 +28,7 @@ courseRouter.post('/courses', jsonParser(), function(req, res) {
 courseRouter.put('/courses/:id', jsonParser(), function(req, res) {
   var courseData = req.body;
   delete courseData._id;
+
   Course.update({_id: req.params.id}, courseData, function(err) {
     if (err) return handleError(err, res);
 
