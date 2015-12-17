@@ -1,0 +1,11 @@
+$button-ok: {
+  @include lms-button($color-scheme1);
+}
+
+$button-shit: {
+  @include lms-button($color-scheme6);
+}
+
+$button-fuck: {
+  @include lms-button($color-scheme7);
+}
