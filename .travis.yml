@@ -6,10 +6,10 @@ node_js:
 services:
   - mongodb
 env:
-  - CLIENT_ID='123'
-  - CLIENT_SECRET='abc'
-  - HOST='localhost:5000'
-  - MONGOLAB_URI='mongodb://localhost/lms_test'
-  - APP_SECRET='helloworld'
+  - CLIENT_ID=123
+  - CLIENT_SECRET=abc
+  - HOST=localhost:5000
+  - MONGOLAB_URI=mongodb://localhost/lms_test
+  - APP_SECRET=helloworld
 
  
