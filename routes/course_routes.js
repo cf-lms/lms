@@ -14,15 +14,7 @@ courseRouter.get('/all-courses', function(req, res) {
   });
 });
 
-courseRouter.get('/courses/:id', jsonParser(), function(req, res) {
-  Course.find({_id: req.params.id}, function(err, data) {
-    if (err) return handleError(err, res);
-
-    res.send(data);
-  });
-});
-
-courseRouter.post('/courses', function(req, res) {
+courseRouter.post('/courses', jsonParser(), function(req, res) {
   var newCourse = new Course(req.body);
 
   newCourse.save(function(err, data) {
@@ -42,7 +34,7 @@ courseRouter.put('/courses/:id', jsonParser(), function(req, res) {
   });
 });
 
-courseRouter.delete('courses/:id', jsonParser(), function(req, res) {
+courseRouter.delete('/courses/:id', jsonParser(), function(req, res) {
   Course.remove({_id: req.params.id}, function(err) {
     if (err) return handleError(err, res);
 

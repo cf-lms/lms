@@ -13,8 +13,7 @@ userRouter.post('/signup', jsonParser(), function(req, res) {
   newUser.save(function(err, data) {
     if (err) return handleError(err, res);
 
-    delete data.admin;
-    res.json(data);
+    res.send(data);
   });
 });
 
@@ -31,9 +30,9 @@ userRouter.put('/users/:id', jsonParser(), function(req, res) {
 
 userRouter.delete('/users/:id', jsonParser(), function(req, res) {
 
-  Officer.remove({_id: req.params.id}, function(err) {
+  User.remove({_id: req.params.id}, function(err) {
     if (err) return handleError(err, res);
 
-    res.json({msg: 'deleted!'});
+    res.json({msg: 'deleted'});
   });
 });
