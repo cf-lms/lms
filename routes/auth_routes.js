@@ -1,6 +1,5 @@
 var express = require('express');
 var https = require('https');
-// this needs to be modifed to an env
 var clientId = process.env.CLIENT_ID;
 var clientSecret = process.env.CLIENT_SECRET;
 
