@@ -6,6 +6,9 @@ body {
   font-weight: 100;
 }
 
+//Container
+$container: @include container-format;
+
 h1 {
   width: 62%;
   font-family: $heading-san-serif
