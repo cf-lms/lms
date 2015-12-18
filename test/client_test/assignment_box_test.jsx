@@ -1,4 +1,4 @@
-// jest.dontMock('../../app/jsx/assignment_box/assignment_box.jsx');
+jest.dontMock('../../app/jsx/assignment_box/assignment_box.jsx');
 
 var React = require('react');
 var ReactDOM = require('react-dom');
