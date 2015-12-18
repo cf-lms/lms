@@ -8,6 +8,10 @@ var jscs = require('gulp-jscs');
 var stylish = require('gulp-jscs-stylish');
 var webpack = require('webpack-stream');
 var babel = require('gulp-babel');
+var mocha = require('gulp-mocha');
+
+var appFiles = ['index.js', 'lib/**/*.js'];
+var testFiles = ['test/**/*.js'];
 
 gulp.task('static:dev', function() {
   return gulp.src('app/**/*.html')
@@ -64,6 +68,14 @@ gulp.task('webpack:dev', function() {
     }
   }))
   .pipe(gulp.dest('build/'));
+});
+
+gulp.task('mocha:test', function() {
+  return gulp.src(testFiles)
+    .pipe(mocha({
+      read: false,
+      reporter: 'nyan'
+    }))
 });
 
 gulp.task('webpack:test', function() {
