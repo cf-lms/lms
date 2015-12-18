@@ -21,13 +21,14 @@ describe('The auth routes', function() {
     testServer.get('/user', function(req, res) {
       res.json({login: 'someguy'})
     });
-    testServer.listen(5000);
-  });
+    this.server = testServer.listen(5000);
+  }.bind(this));
   after(function(done) {
     mongoose.connection.db.dropDatabase(function() {
       done();
     })
-  });
+    this.server.close(function() {console.log('done again')})
+  }.bind(this));
   it('should redirect', function(done) {
     chai.request('localhost:3000')
       .get('/auth')
