@@ -8,3 +8,4 @@ module.exports.RECEIVE_ASSIGNMENTS = 'RECEIVE_ASSIGNMENTS';
 
 // ui actions
 module.exports.ADD_ASSIGNMENT = 'ADD_ASSIGNMENT';
+module.exports.LOGGED_IN_STATUS = 'LOGGED_IN_STATUS';

@@ -8,7 +8,7 @@ var Dashboard = module.exports = React.createClass({
   render: function() {
     return (
       <div>
-        <HeaderBox handleAuthClick={this.props.handleAuthClick} logStatus={this.props.logStatus} />
+        <HeaderBox handleAuthClick={this.props.handleAuthClick} loggedInStatus={this.props.loggedInStatus} />
         <AsideBox />
         <AssignmentBox expand={true} header='DUE RIGHT FUCKING NOW' assignments={this.props.assignments} />
         <AssignmentBox expand={false} header='DUE FUCKING LAST WEEK' assignments={this.props.assignments} />

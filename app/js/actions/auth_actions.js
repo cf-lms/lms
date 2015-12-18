@@ -24,3 +24,11 @@ module.exports.userSignup = function() {
       });
   };
 };
+
+module.exports.loggedInStatus = function() {
+  var state = getState();
+  return {
+    type: LOGGED_IN_STATUS,
+    status: !state.loggedInStatus
+  };
+};

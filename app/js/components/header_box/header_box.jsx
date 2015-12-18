@@ -8,7 +8,7 @@ module.exports = React.createClass({
     return (
       <header>
         <h1>Cadet - Better than Canvas</h1>
-        <AuthButton handleAuthClick={this.props.handleAuthClick} logStatus={this.props.logStatus} />
+        <AuthButton handleAuthClick={this.props.handleAuthClick} loggedInStatus={this.props.loggedInStatus} />
       </header>
     );
   }

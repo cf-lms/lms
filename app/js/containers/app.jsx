@@ -9,7 +9,7 @@ function mapStateToProps(state) {
   return {
     assignments: state.assignments,
     handleAuthClick: state.handleAuthClick,
-    logStatus: state.logStatus
+    loggedInStatus: state.loggedInStatus
   };
 }
 
