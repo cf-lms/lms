@@ -1,0 +1,51 @@
+body {
+  width: 90%;
+  margin: 10px;
+  background-color: #fff;
+  font-family: $primary-sans-serif;
+  font-weight: 100;
+}
+
+h1 {
+  width: 62%;
+  font-family: $heading-san-serif
+  font-size: 2em;
+}
+
+h2 {
+  font-family: $heading-san-serif
+  font-size: 1.5em;
+}
+
+h3 {
+  font-family: $heading-san-serif
+  font-size: 1em; 
+}
+
+input {
+  font-size: 100%;
+  background-color: $color-scheme4;
+  border: 1px solid $color-scheme3;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-position: 8px 9px;
+  display: block;
+  padding: 10px, 10px, 10px, 20px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+ul {
+  @include container-format($color-scheme4, $width: 57%);
+  @include text-format(left);
+  padding: 10px, 30px, 30px, 30px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+li {
+  @include text-format(left);
+  list-style-type: none;
+  font-weight: 700;
+  padding: 0, 30px, 30px, 30px;
+  margin-top: 30px;
+}
