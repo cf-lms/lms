@@ -5,15 +5,16 @@
 
 //Import Base layer: 
 @import 'reset';
-@import 'base';
 @import 'typography';
 @import 'colors';
 @import 'mixins';
+@import 'base';
 
 //Import Modules: Specific Objects
 @import 'buttons';
 @import 'icons';
 @import 'inputs';
+@import 'forms';
 @import 'lists';
 
 @import 'state';

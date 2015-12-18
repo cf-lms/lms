@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
-var minifyCss = require('gulp-minify-css');
+//var minifyCss = require('gulp-minify-css');
 var gulpWatch = require('gulp-watch');
 var sass = require('gulp-sass');
 var maps = require('gulp-sourcemaps');
@@ -19,10 +19,10 @@ gulp.task('static:dev', function() {
 });
 
 gulp.task('sass:dev', function() {
-  return gulp.src('./app/sass/**/*.scss')
+  return gulp.src('./app/sass/**.scss')
   .pipe(maps.init())
   .pipe(sass().on('error', sass.logError))
-  .pipe(minifyCss())
+  //.pipe(minifyCss())
   .pipe(maps.write('./'))
   .pipe(gulp.dest('build/css'));
 });
@@ -64,7 +64,7 @@ gulp.task('webpack:dev', function() {
           loader: 'babel',
           query: {
             presets: ['react']
-          }
+          },
         }
       ]
     },
@@ -75,12 +75,13 @@ gulp.task('webpack:dev', function() {
   .pipe(gulp.dest('build/'));
 });
 
+
 gulp.task('mocha:test', function() {
   return gulp.src(testFiles)
     .pipe(mocha({
       read: false,
       reporter: 'nyan'
-    }))
+    }));
 });
 
 gulp.task('webpack:test', function() {
@@ -106,6 +107,6 @@ gulp.task('webpack:test', function() {
 });
 
 gulp.task('css:dev', ['sass:dev', 'images:dev', 'fonts:dev']);
-gulp.task('default', ['build:dev', 'jscs', 'lint']);
+gulp.task('default', ['build', 'jscs', 'lint']);
 gulp.task('test', ['webpack:test']);
 gulp.task('build', ['static:dev', 'webpack:dev', 'css:dev']);

@@ -6,22 +6,19 @@ body {
   font-weight: 100;
 }
 
-//Container
-$container: @include container-format;
-
 h1 {
   width: 62%;
-  font-family: $heading-san-serif
+  font-family: $heading-san-serif;
   font-size: 2em;
 }
 
 h2 {
-  font-family: $heading-san-serif
+  font-family: $heading-san-serif;
   font-size: 1.5em;
 }
 
 h3 {
-  font-family: $heading-san-serif
+  font-family: $heading-san-serif;
   font-size: 1em; 
 }
 
