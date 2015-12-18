@@ -108,4 +108,4 @@ gulp.task('webpack:test', function() {
 gulp.task('css:dev', ['sass:dev', 'images:dev', 'fonts:dev']);
 gulp.task('default', ['build:dev', 'jscs', 'lint']);
 gulp.task('test', ['webpack:test']);
-gulp.task('build', ['static:dev', 'sass:dev', 'webpack:dev', 'css:dev']);
+gulp.task('build', ['static:dev', 'webpack:dev', 'css:dev']);
