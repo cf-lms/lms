@@ -13,37 +13,40 @@ process.env.APP_SECRET = 'helloworld';
 require(__dirname + '/../server');
 var mongoose = require('mongoose');
 
-describe('The auth routes', function() {
+describe('The git routes', function() {
   before(function() {
+    testServer.post('/user/repos', function(req, res) {
+      res.json({msg: 'bravo'});
+    });
     testServer.post('/login/oauth/access_token', function(req, res) {
-      res.json({access_token: 'success'});
+      res.json({access_token: '123token'});
     });
     testServer.get('/user', function(req, res) {
-      res.json({login: 'someguy'})
+      res.json({login: 'someguy'});
     });
     this.server = testServer.listen(5000);
   }.bind(this));
+  before(function(done) {
+    chai.request('localhost:3000')
+      .get('/auth/token?code=notarealcode')
+      .end(function(err, res) {
+        this.token = res.body.token;
+        done()
+      }.bind(this));
+  });
   after(function(done) {
     mongoose.connection.db.dropDatabase(function() {
       done();
-    })
-    this.server.close(function() {console.log('done again')})
+    });
+    this.server.close(function() {console.log('done')});
   }.bind(this));
-  it('should redirect', function(done) {
+  it('should create a new repo', function(done) {
     chai.request('localhost:3000')
-      .get('/auth')
+      .post('/git/create/repo')
+      .set('token', this.token)
       .end(function(err, res) {
         expect(err).to.eql(null);
-        expect(res.redirects.length).to.eql(2);
-        done();
-      });
-  });
-  it('should ask for a token', function(done) {
-    chai.request('localhost:3000')
-      .get('/auth/token?code=thisisnotarealcode')
-      .end(function(err, res) {
-        expect(err).to.eql(null);
-        expect(res.body).to.have.property('token');
+        expect(res.body.msg).to.eql('bravo');
         done();
       });
   });

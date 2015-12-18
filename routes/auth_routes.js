@@ -10,7 +10,9 @@ var host = process.env.HOST;
 var authRouter = module.exports = express.Router();
 
 authRouter.get('/', function(req, res) {
-  res.redirect('https://github.com/login/oauth/authorize/?client_id=' + clientId);
+  res.redirect('https://github.com/login/oauth/authorize/?client_id=' + clientId
+    + '&scope=user,repo'
+  );
 });
 
 authRouter.get('/token', function(req, res) {

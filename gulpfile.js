@@ -54,7 +54,7 @@ gulp.task('lint', function () {
 });
 
 gulp.task('webpack:dev', function() {
-  return gulp.src('app/jsx/entry.jsx')
+  return gulp.src('app/js/entry.jsx')
   .pipe(webpack({
     module: {
       loaders: [
@@ -63,8 +63,8 @@ gulp.task('webpack:dev', function() {
           exclude: /node_modules/,
           loader: 'babel',
           query: {
-            presets: ['react']
-          },
+            presets: ['react', 'es2015']
+          }
         }
       ]
     },
