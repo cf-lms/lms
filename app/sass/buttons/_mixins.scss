@@ -1,0 +1,5 @@
+@mixin lms-button($button-color: $success-color, $border-radius: 6px, $font-size: 0.625em) {
+color: $button-color;
+border-radius: $border-radius;
+font-size: $font-size;
+}

@@ -5,8 +5,13 @@ $color-scheme2: #2185c5; // sky blue
 $color-scheme3: #3e454c; // dark grey
 $color-scheme4: #767d84; // light grey
 $color-scheme5: #ffffff; // white - page background
-$color-scheme6: #F0F00E; // yellow - shit button
-$color-scheme7: #F00E0E; // red - fuck button
+$color-scheme6: #F0F00E; // yellow 
+$color-scheme7: #F00E0E; // red
+
+//Additional Colors
+$success-color: $color-scheme1;
+$caution-color: $color-scheme6;
+$danger-color: $color-scheme7;
 
 //Typography
 
