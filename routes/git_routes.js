@@ -17,7 +17,6 @@ gitRouter.post('/create/repo', parseJson, eatToken, function(req,res) {
     .end(function(err, data) {
       if (err) return handleErr(err, res);
       // sort of a placeholder, to be determined
-      //console.log(data);
       res.json(data.body);
     });
 });
