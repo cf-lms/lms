@@ -24,8 +24,8 @@ describe('The git routes', function() {
     testServer.get('/user', function(req, res) {
       res.json({login: 'someguy'});
     });
-    testServer.listen(5000);
-  });
+    this.server = testServer.listen(5000);
+  }.bind(this));
   before(function(done) {
     chai.request('localhost:3000')
       .get('/auth/token?code=notarealcode')
@@ -39,6 +39,9 @@ describe('The git routes', function() {
       done();
     });
   });
+  after(function() {
+    this.server.close();
+  }.bind(this))
   it('should create a new repo', function(done) {
     chai.request('localhost:3000')
       .post('/git/create/repo')
