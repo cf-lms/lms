@@ -9,9 +9,9 @@ var gitRouter = require(__dirname + '/routes/git_routes');
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/lms_dev');
 
 app.use('/', express.static(__dirname + '/build'));
-app.use('/auth', authRouter);
 app.use('/api', courseRouter);
 app.use('/api', assignmentRouter);
+app.use('/auth', authRouter);
 app.use('/git', gitRouter);
 
 app.use(function(req, res) {
