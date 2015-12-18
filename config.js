@@ -7,8 +7,20 @@ var uriUtil = require('mongodb-uri');
  * We recommend a 30 second connection timeout because it allows for
  * plenty of time in most operating environments.
  */
-var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
-                replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };
+var options = {
+  server: {
+    socketOptions: {
+      keepAlive: 1,
+      connectTimeoutMS: 30000
+    }
+  },
+  replset: {
+    socketOptions: {
+      keepAlive: 1,
+      connectTimeoutMS : 30000
+    }
+  }
+};
 
 /*
  * Mongoose uses a different connection string format than MongoDB's standard.

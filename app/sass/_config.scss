@@ -4,15 +4,20 @@ $color-scheme1: #18ce76; // light green
 $color-scheme2: #2185c5; // sky blue
 $color-scheme3: #3e454c; // dark grey
 $color-scheme4: #767d84; // light grey
+$color-scheme5: #ffffff; // white - page background
+$color-scheme6: #F0F00E; // yellow - shit button
+$color-scheme7: #F00E0E; // red - fuck button
 
 //Typography
 
-#Fira Mono
-https://www.google.com/fonts/specimen/Fira+Mono
+//Fira Mono
+$primary-mono: 'Fira', mono;
 
-#Fira Sans
-https://www.google.com/fonts/specimen/Fira+Sans
+//Fira Sans
+$primary-sans-serif: 'Fira', sans-serif;
 
-#Proxima Nova Soft
-<script src="https://use.typekit.net/epm4awk.js"></script>
-<script>try{Typekit.load({ async: true });}catch(e){}</script>
+//Proxima Nova Soft
+$heading-san-serif: 'Proxima', sans-serif;
+
+//Heading
+$header: $color-scheme1;

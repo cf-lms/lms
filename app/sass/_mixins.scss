@@ -1,0 +1,18 @@
+@mixin text-format($text-color, $alignment: left, $size: 0.75em) {
+  text-align: $alignment;
+  font-size: $size;
+  color: $text-color;
+}
+
+@mixin container-format($background-color: $color-scheme1, $width: 60%, $margin-left: 10px, $border-radius: 25px) {
+  background-color: $background-color;
+  width: $width;
+  margin-left: $margin-left;
+  border-radius: $border-radius;
+}
+
+@mixin lms-button($color-scheme: $color-scheme1, $border-radius: 6px, $font-size: 0.625em) {
+color: $color-scheme;
+border-radius: $border-radius;
+font-size: $font-size;
+}
