@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
-var minifyCss = require('gulp-minify-css');
+//var minifyCss = require('gulp-minify-css');
 var gulpWatch = require('gulp-watch');
 var sass = require('gulp-sass');
 var maps = require('gulp-sourcemaps');
@@ -18,7 +18,7 @@ gulp.task('sass:dev', function() {
   return gulp.src('./app/sass/**.scss')
   .pipe(maps.init())
   .pipe(sass().on('error', sass.logError))
-  .pipe(minifyCss())
+  //.pipe(minifyCss())
   .pipe(maps.write('./'))
   .pipe(gulp.dest('build/css'));
 });
@@ -67,4 +67,4 @@ gulp.task('webpack:dev', function() {
 });
 
 gulp.task('build', ['static:dev', 'sass:dev', 'webpack:dev', 'css:dev']);
-gulp.task('default', ['build:dev', 'jscs', 'lint']);
+gulp.task('default', ['build', 'jscs', 'lint']);
