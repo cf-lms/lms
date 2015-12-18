@@ -1,1 +1,1 @@
-require('./assignments.js');
+module.exports.store = require('./assignments_store.js');

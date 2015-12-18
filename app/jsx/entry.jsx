@@ -1,20 +1,18 @@
+require("babel-polyfill");
 var React = require('react');
 var ReactDOM = require('react-dom');
-var AssignmentBox = require(__dirname + '/assignment_box/assignment_box.jsx');
+var Redux = require('redux');
+var Provider = require('react-redux').Provider;
+var App = require(__dirname + '/containers/app.jsx');
+var thunk = require('redux-thunk');
+var rootReducer = require(__dirname + '/stores/assignments_store');
+
+var createStoreWithMiddleware = Redux.applyMiddleware(thunk)(Redux.createStore);
+var store = createStoreWithMiddleware(rootReducer);
 
 ReactDOM.render(
-  <AssignmentBox expand={true} header='DUE RIGHT FUCKING NOW' />,
-  document.getElementById('currentAssignments')
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root')
 );
-
-ReactDOM.render(
-  <AssignmentBox expand={false} header='DUE FUCKING LATER' />,
-  document.getElementById('futureAssignments')
-);
-
-ReactDOM.render(
-  <AssignmentBox expand={false} header='DUE FUCKING LAST WEEK' />,
-  document.getElementById('previousAssignments')
-);
-
-
