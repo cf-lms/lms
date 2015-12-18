@@ -4,9 +4,9 @@ chai.use(chaihttp);
 var expect = chai.expect;
 
 process.env.MONGOLAB_URI = 'mongodb://localhost/lms_test';
-require(__dirname + '/../server.js');
+require(__dirname + '/../server');
 var mongoose = require('mongoose');
-var Course = require(__dirname + '/../models/course.js');
+var Course = require(__dirname + '/../models/course');
 
 describe('the course routes', function() {
 

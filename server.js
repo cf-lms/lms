@@ -1,9 +1,10 @@
 var express = require('express');
 var mongoose = require('mongoose');
-var courseRouter = require(__dirname + '/routes/course_routes.js');
-var assignmentRouter = require(__dirname + '/routes/assignment_routes.js');
+var courseRouter = require(__dirname + '/routes/course_routes');
+var assignmentRouter = require(__dirname + '/routes/assignment_routes');
 var app = express();
 var authRouter = require(__dirname + '/routes/auth_routes');
+
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/lms_dev');
 
 app.use('/api', courseRouter);
