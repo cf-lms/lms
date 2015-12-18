@@ -15,18 +15,16 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-  <AssignmentBox expand={true} header='DUE RIGHT FUCKING NOW' />,
+  <AssignmentBox expand={true} header='Due Right Fucking Now!' />,
   document.getElementById('currentAssignments')
 );
 
 ReactDOM.render(
-  <AssignmentBox expand={false} header='DUE FUCKING LATER' />,
+  <AssignmentBox expand={false} header='Due Fucking Later!' />,
   document.getElementById('futureAssignments')
 );
 
 ReactDOM.render(
-  <AssignmentBox expand={false} header='DUE FUCKING LAST WEEK' />,
+  <AssignmentBox expand={false} header='Due Fucking Last Wweek!' />,
   document.getElementById('previousAssignments')
 );
-
-

@@ -1,51 +1,81 @@
 body {
   width: 90%;
   margin: 10px;
-  background-color: #fff;
+  background-color: $color-scheme8;
   font-family: $primary-sans-serif;
-  font-weight: 100;
 }
-
-h1 {
-  width: 62%;
-  font-family: $heading-san-serif;
+main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap:ltr;
+  background-color: $color-scheme5;
+  text-align: left;
+  margin: 0 1.5%;
+  width: 97%;
+}
+section { 
+  display: flex;
+  flex-direction: column;
+  flex-wrap: ltr;
+  float: right;
+  margin: 0 1.5%;
+  width: 87%;
+}
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: ltr;
+  float: right;
+  margin: 1.5%;
+  width: 97%;
+}
+aside {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: ltr;
+  background-color: $color-scheme3;
+  float: left;
+  margin: 0 1.5%;
+  width: 17%;
   font-size: 2em;
 }
-
+h1 {
+  width: 62%;
+  background-color: $color-scheme1;
+  font-family: $heading-sans-serif;
+  font-size: 2em;
+  color: $color-scheme5;
+}
 h2 {
-  font-family: $heading-san-serif;
+  font-family: $heading-sans-serif;
   font-size: 1.5em;
 }
-
 h3 {
-  font-family: $heading-san-serif;
+  font-family: $heading-sans-serif;
   font-size: 1em; 
 }
-
 input {
   font-size: 100%;
-  background-color: $color-scheme4;
+  background-color: $color-scheme2;
   border: 1px solid $color-scheme3;
   border-radius: 5px;
   background-repeat: no-repeat;
   background-position: 8px 9px;
   display: block;
-  padding: 10px, 10px, 10px, 20px;
   margin-left: 30px;
   margin-bottom: 10px;
 }
 ul {
-  @include container-format($color-scheme4, $width: 57%);
-  @include text-format(left);
-  padding: 10px, 30px, 30px, 30px;
+  padding: 10px 30px 30px 30px;
   margin-left: 30px;
   margin-top: 30px;
 }
 
 li {
-  @include text-format(left);
+  width: 58%;
+  background-color: $color-scheme4;
   list-style-type: none;
   font-weight: 700;
-  padding: 0, 30px, 30px, 30px;
-  margin-top: 30px;
+  padding: 10px 10px 10px 20px;
+  margin: 10px 10px 10px 10px;
 }
