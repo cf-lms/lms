@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-require('./sass/application.scss');
+//require('./css/application.css');
 var AssignmentBox = require(__dirname + '/assignment_box/assignment_box.jsx');
 var HeaderBox = require(__dirname + '/header_box/header_box.jsx');
 var AsideBox = require(__dirname + '/aside_box/aside_box.jsx');

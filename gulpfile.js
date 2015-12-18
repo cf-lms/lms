@@ -15,7 +15,7 @@ gulp.task('static:dev', function() {
 });
 
 gulp.task('sass:dev', function() {
-  return gulp.src('./app/sass/**/*.scss')
+  return gulp.src('./app/sass/**.scss')
   .pipe(maps.init())
   .pipe(sass().on('error', sass.logError))
   .pipe(minifyCss())
@@ -55,7 +55,7 @@ gulp.task('webpack:dev', function() {
           loader: 'babel',
           query: {
             presets: ['react']
-          }
+          },
         }
       ]
     },
