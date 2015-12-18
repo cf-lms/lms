@@ -23,27 +23,33 @@ authRouter.get('/token', function(req, res) {
       if (err) return handleErr(err, res);
 
       var token = data.body.access_token;
-
-      request
-        .get((host || 'https://api.github.com') + '/user')
-        .query({access_token: token})
-        .end(function(err, data) {
-          if (err) return handleErr(err, res);
-
-          var user = new User();
-          user.username = data.body.login;
-          user.token = token;
-          
-          user.save(function(err, info) {
-            if (err) return handleErr(err, res);
-
-            user.storeToken(function(err, token) {
-              if (err) return handleErr(err, res);
-
-              res.json({token: token});
-            });
-          });
-        });
+      getUser(token);
     });
+
+  function getUser(token) {
+    request
+      .get((host || 'https://api.github.com') + '/user')
+      .query({access_token: token})
+      .end(function(err, data) {
+        if (err) return handleErr(err, res);
+        
+        var user = new User();
+        user.username = data.body.login;
+        user.token = token;
+        saveUser(user, token);      
+      });
+  }
+
+  function saveUser(user, token) {
+    user.save(function(err, data) {
+      if (err) return handleErr(err, res);
+
+      user.generateToken(function(err, token) {
+        if (err) return handleErr(err, res);
+
+        res.json({token: token});
+      });
+    });
+  }
 });
 

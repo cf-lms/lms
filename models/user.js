@@ -8,10 +8,9 @@ var userSchema = new mongoose.Schema({
   token: String
 });
 
-userSchema.methods.storeToken = function(cb) {
-  var id = this.id;
-
-  eat.encode({id: id}, process.env.APP_SECRET, cb);
+userSchema.methods.generateToken = function(cb) {
+  var token = this.token
+  eat.encode({token: token}, process.env.APP_SECRET, cb);
 };
 
 module.exports = exports = mongoose.model('User', userSchema);
