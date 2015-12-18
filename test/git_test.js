@@ -6,7 +6,7 @@ var testServer = require('express')();
 
 process.env.CLIENT_ID = '123';
 process.env.CLIENT_SECRET = 'abc';
-process.env.HOST = 'localhost:6000';
+process.env.HOST = 'localhost:5000';
 process.env.MONGOLAB_URI = 'mongodb://localhost/lms_test';
 process.env.APP_SECRET = 'helloworld';
 
@@ -24,7 +24,7 @@ describe('The git routes', function() {
     testServer.get('/user', function(req, res) {
       res.json({login: 'someguy'});
     });
-    testServer.listen(6000);
+    testServer.listen(5000);
   });
   before(function(done) {
     chai.request('localhost:3000')
