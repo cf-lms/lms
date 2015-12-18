@@ -24,7 +24,7 @@ describe('The git routes', function() {
     testServer.get('/user', function(req, res) {
       res.json({login: 'someguy'});
     });
-    testServer.listen(5000);
+    testServer.listen(6000);
   });
   before(function(done) {
     chai.request('localhost:3000')
