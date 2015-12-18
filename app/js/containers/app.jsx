@@ -6,12 +6,16 @@ var assignmentsActions = require(__dirname + '/../actions/assignments_actions');
 var Dashboard = require(__dirname + '/dashboard.jsx');
 
 function mapStateToProps(state) {
-  return { assignments: state.assignments };
-};
+  return {
+    assignments: state.assignments,
+    handleAuthClick: state.handleAuthClick,
+    logStatus: state.logStatus
+  };
+}
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(assignmentsActions, dispatch);
-};
+}
 
 var App = connect(
   mapStateToProps,
