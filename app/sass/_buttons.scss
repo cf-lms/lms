@@ -1,0 +1,8 @@
+//Green okay button, yellow "shit" button ( to be changed to re-submit or something
+//more appropriate at some point, red "fuck" button, also to be changed at some point)
+//
+$button-ok: @include lms-button; // light green button
+
+$button-shit: @include lms-button($color-scheme6); // yellow button
+
+$button-fuck: @include lms-button($color-scheme7); // red button

@@ -8,6 +8,10 @@ var jscs = require('gulp-jscs');
 var stylish = require('gulp-jscs-stylish');
 var webpack = require('webpack-stream');
 var babel = require('gulp-babel');
+var mocha = require('gulp-mocha');
+
+var appFiles = ['index.js', 'lib/**/*.js'];
+var testFiles = ['test/**/*.js'];
 
 gulp.task('static:dev', function() {
   return gulp.src('app/**/*.html')
@@ -66,5 +70,36 @@ gulp.task('webpack:dev', function() {
   .pipe(gulp.dest('build/'));
 });
 
+gulp.task('mocha:test', function() {
+  return gulp.src(testFiles)
+    .pipe(mocha({
+      read: false,
+      reporter: 'nyan'
+    }))
+});
+
+gulp.task('webpack:test', function() {
+  return gulp.src('test/client_test/test_entry.jsx')
+  .pipe(webpack({
+    module: {
+      loaders: [
+        {
+          test: /\.jsx?$/,
+          exclude: /node_modules/,
+          loader: 'babel',
+          query: {
+            presets: ['react', 'es2015']
+          }
+        }
+      ]
+    },
+    output: {
+      filename: 'test_bundle.js'
+    }
+  }))
+  .pipe(gulp.dest('test/__tests__/'));
+});
+
 gulp.task('build', ['static:dev', 'sass:dev', 'webpack:dev', 'css:dev']);
 gulp.task('default', ['build:dev', 'jscs', 'lint']);
+gulp.task('test', ['webpack:test']);
