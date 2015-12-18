@@ -100,6 +100,6 @@ gulp.task('webpack:test', function() {
   .pipe(gulp.dest('test/__tests__/'));
 });
 
-gulp.task('build', ['static:dev', 'sass:dev', 'webpack:dev', 'css:dev']);
+gulp.task('build:dev', ['static:dev', 'sass:dev', 'webpack:dev', 'css:dev']);
 gulp.task('default', ['build:dev', 'jscs', 'lint']);
 gulp.task('test', ['webpack:test']);

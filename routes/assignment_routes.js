@@ -1,7 +1,7 @@
 var express = require('express');
-var handleError = require(__dirname + '/../lib/handle_server_error.js');
+var handleError = require(__dirname + '/../lib/handle_error');
 var jsonParser = require('body-parser').json;
-var Assignment = require(__dirname + '/../models/assignment.js');
+var Assignment = require(__dirname + '/../models/assignment');
 
 var assignmentRouter = module.exports = exports = express.Router();
 

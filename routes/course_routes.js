@@ -1,7 +1,7 @@
 var express = require('express');
-var handleError = require(__dirname + '/../lib/handle_server_error.js');
+var handleError = require(__dirname + '/../lib/handle_error');
 var jsonParser = require('body-parser').json;
-var Course = require(__dirname + '/../models/course.js');
+var Course = require(__dirname + '/../models/course');
 
 var courseRouter = module.exports = exports = express.Router();
 
