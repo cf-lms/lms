@@ -1,10 +1,10 @@
-jest.dontMock('../../app/jsx/assignment_box/assignment_box.jsx');
+jest.dontMock('../../app/js/components/assignment_box/assignment_box.jsx');
 
 var React = require('react');
 var ReactDOM = require('react-dom');
 var TestUtils = require('react-addons-test-utils');
 
-var AssignmentBox = require('../../app/jsx/assignment_box/assignment_box.jsx');
+var AssignmentBox = require('../../app/js/components/assignment_box/assignment_box.jsx');
 
 describe('AssignmentBox', function() {
 
