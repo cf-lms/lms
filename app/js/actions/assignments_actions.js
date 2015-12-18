@@ -1,10 +1,9 @@
 require('isomorphic-fetch');
-
 var types = require(__dirname + '/../constants/action_types');
 
 module.exports.requestAssignments = function() {
   return {
-    type: REQUEST_ASSIGNMENTS,
+    type: REQUEST_ASSIGNMENTS
   }
 }
 
@@ -29,7 +28,7 @@ module.exports.fetchAssignments = function() {
       .catch(function(err) {
         console.log('unable to fetch assignments');
       });
-  }
+  };
 }
 
 module.exports.receiveAssignments = function(json) {
