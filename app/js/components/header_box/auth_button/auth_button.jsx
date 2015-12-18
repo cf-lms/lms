@@ -5,7 +5,7 @@ var AuthButton = module.exports = React.createClass({
 
   render: function() {
     return(
-      <a onClick={this.props.handleAuthClick} href="#">{this.props.loggedInStatus.toString()}</a>
+      <a onClick={this.props.handleAuthClick} href="#">{this.props.loggedInStatus}</a>
     );
   }
 });

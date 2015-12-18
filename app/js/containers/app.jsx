@@ -5,16 +5,12 @@ var bindActionCreators = require('redux').bindActionCreators;
 var authActions = require(__dirname + '/../actions/auth_actions');
 var Dashboard = require(__dirname + '/dashboard.jsx');
 
-// Dashboard.propTypes = {
-//   loggedInStatus: PropTypes.boolean.isRequired,
-//   actions: PropTypes.object.isRequired
-// };
-
 function mapStateToProps(state) {
+  console.log(state);
   return {
-    assignments: state.assignments,
+    assignments: state.assignmentReducer,
     handleAuthClick: state.handleAuthClick,
-    loggedInStatus: state.loggedInStatus
+    loggedInStatus: state.authReducer[0].loggedInStatus
   };
 }
 
