@@ -25,6 +25,6 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-  <AssignmentBox expand={false} header='Due Fucking Last Wweek!' />,
+  <AssignmentBox expand={false} header='Due Fucking Last Week!' />,
   document.getElementById('previousAssignments')
 );

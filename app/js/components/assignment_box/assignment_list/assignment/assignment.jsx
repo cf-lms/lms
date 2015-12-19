@@ -15,14 +15,14 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    return(
-      <li>
-        <span dangerouslySetInnerHTML={this.rawMarkup()} />
-        <p>{this.props.dueDate}</p>
-        <form onSubmit={this.handleSubmit}>
-          <input type="submit" value="Submit Assignment" />
-        </form>
-      </li>
+    return( 
+        <li>
+          <span dangerouslySetInnerHTML={this.rawMarkup()} />
+          <p>{this.props.dueDate}</p>
+          <form onSubmit={this.handleSubmit}>
+            <input type="submit" value="Submit Assignment" />
+          </form>
+        </li>
     );
   }
 });

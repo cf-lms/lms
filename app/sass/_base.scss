@@ -2,20 +2,25 @@ body {
   width: 90%;
   margin: 10px 10px 10px 10px;
   background-color: $color-scheme8;
+  text-align: center;
   font-family: $primary-sans-serif;
 }
-main {
+.main {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
+  position: fixed;
   background-color: $color-scheme5;
+  top: -10px;
   text-align: left;
-  margin: 1.5%;
-  width: 97%;
+  margin: 1.5% 1.5% 1.5% 7.5%;
+  width: 85%;
+  height: 100%;
 }
 nav {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   flex-wrap: nowrap;
   justify-content: space-around;
   position: fixed;
@@ -25,31 +30,40 @@ nav {
   float: left;
   padding: 2px 2px 2px 2px;
   width: 10%;
-  height: 97%;
+  height: 100%;
   text-align: center;
   font-size: 2em;
 }
-
+.cadet-logo {
+  align-items: flex-start
+}
 .icon-home {
-  padding-left: 20px;
+  padding-left: 10px;
 }
 .icon-files-empty {
-  padding-left: 20px;
+  padding-left: 10px;
 }
 .icon-cog {
-  padding-left: 20px;
+  padding-left: 10px;
 }
-.icon-class {
-  padding: 2px 2px 2px 2px;
+.assignment-header {
+  padding: 20px 20px 20px 20px;
+}
+.icon-minus {
+  text-align: last;
+  padding: 20px 20px 20px 20px;
+}
+.icon-plus {
+  padding: 20px 20px 20px 20px;
 }
 header {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  float: right;
-  margin: 1.5%;
-  width: 77%;
+  margin: 0 0 0 7.5%;
+  width: 90.5%;
   background-color: $color-scheme4;
+  padding: 5px 5px 5px 20px;
 }
 article { 
   display: flex;
@@ -59,18 +73,23 @@ article {
   margin: 0 1.5%;
   width: 77%;
 }
-h1 {
+h1{
   width: 62%;
-  background-color: $color-scheme1;
+  background-color: $color-scheme4;
   font-family: $heading-sans-serif;
   font-size: 2em;
   font-weight: 100;
   color: $color-scheme5;
-  padding: 5px 5px 5px 5px;
+  padding: 20px 20px 20px 20px;
 }
 h2 {
+  width: 62%;
+  background-color: $color-scheme1;
   font-family: $heading-sans-serif;
   font-size: 1.5em;
+  font-weight: 100;
+  color: $color-scheme5;
+  padding: 20px 20px 20px 20px;
 }
 h3 {
   font-family: $heading-sans-serif;
@@ -88,11 +107,10 @@ input {
   margin-bottom: 10px;
 }
 ul {
-  padding: 10px 30px 30px 30px;
+  padding: 10px 10px 10px 10px;
   margin-left: 30px;
   margin-top: 30px;
 }
-
 li {
   width: 58%;
   background-color: $color-scheme4;
