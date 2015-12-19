@@ -6,10 +6,8 @@ var authActions = require(__dirname + '/../actions/auth_actions');
 var Dashboard = require(__dirname + '/dashboard.jsx');
 
 function mapStateToProps(state) {
-  console.log(state);
   return {
     assignments: state.assignmentReducer,
-    handleAuthClick: state.authReducer.handleAuthClick,
     loggedInStatus: state.authReducer.loggedInStatus
   };
 }
