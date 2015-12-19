@@ -10,8 +10,8 @@ ReactDOM.render(
 );
 
 ReactDOM.render(
-  <AsideBox />,
-  document.getElementById('aside')
+  <NavBox />,
+  document.getElementById('nav')
 );
 
 ReactDOM.render(

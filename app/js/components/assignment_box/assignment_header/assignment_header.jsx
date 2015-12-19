@@ -10,7 +10,7 @@ module.exports = React.createClass({
   render: function() {
     return (
       <h1 onClick={this.onClick} className="assignment-header">{this.props.header}
-        <span className={this.props.expand ? "icon-minus" : "icon-plus"}></span>
+        <span className={this.props.expand ? "icon-class icon-minus" : "icon-class icon-plus"}></span>
       </h1>
     );
   }
