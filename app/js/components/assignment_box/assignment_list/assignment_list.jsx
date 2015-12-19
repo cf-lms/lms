@@ -7,7 +7,7 @@ module.exports = React.createClass({
   render: function() {
     var assignmentNodes = this.props.data.map(function(assignment) {
       return (
-        <Assignment due={assignment.dueDate} key={assignment.dueDate}>
+        <Assignment key={assignment.id}>
           {assignment.title}
         </Assignment>
       );

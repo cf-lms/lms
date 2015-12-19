@@ -5,19 +5,11 @@ var AssignmentList = require(__dirname + '/assignment_list/assignment_list.jsx')
 
 module.exports = React.createClass({
 
-  getInitialState: function() {
-    return {data: [{title: 'some assignment', dueDate: 'yesterday'}, {title: 'some other assignment', dueDate: 'today'}], expand: this.props.expand};
-  },
-
-  handleExpandClick: function() {
-    this.setState({expand: !this.state.expand});
-  },
-
   render: function() {
     return (
       <article>
-        <AssignmentHeader onExpandClick={this.handleExpandClick} header={this.props.header} expand={this.state.expand} />
-        {this.state.expand ? <AssignmentList data={this.state.data} /> : null }
+        <AssignmentHeader {...this.props} onExpandClick={this.props.handleExpandClick} />
+        {this.props.expand ? <AssignmentList data={this.props.data} /> : null }
       </article>
     );
   }

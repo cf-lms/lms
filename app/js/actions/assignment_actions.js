@@ -1,11 +1,12 @@
 require('isomorphic-fetch');
+var assign = require('object-assign')
 var types = require(__dirname + '/../constants/action_types');
 
 module.exports.requestAssignments = function() {
   return {
     type: REQUEST_ASSIGNMENTS
-  }
-}
+  };
+};
 
 module.exports.fetchAssignments = function() {
   return function(dispatch, getState) {
@@ -29,15 +30,23 @@ module.exports.fetchAssignments = function() {
         console.log('unable to fetch assignments');
       });
   };
-}
+};
 
 module.exports.receiveAssignments = function(json) {
   return {
     type: RECEIVE_ASSIGNMENTS,
     items:[],
     receivedAt: Date.now()
-  }
-}
+  };
+};
+
+module.exports.handleExpandClick = function(expand, context) {
+  return {
+    type: types.HANDLE_EXPAND_CLICK,
+    expand: !expand,
+    context: context
+  };
+};
 
 // TODO create action for AJAX error handling
 

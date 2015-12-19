@@ -4,6 +4,7 @@ var AssignmentBox = require(__dirname + '/../components/assignment_box/assignmen
 var HeaderBox = require(__dirname + '/../components/header_box/header_box.jsx');
 var AsideBox = require(__dirname + '/../components/aside_box/aside_box.jsx');
 
+var save = 'handleAuthClick={this.props.actions.handleAuthClick} loggedInStatus={this.props.loggedInStatus}';
 var Dashboard = module.exports = React.createClass({
   componentDidMount: function() {
     console.log('look ma: ' + document.cookie);
@@ -13,13 +14,19 @@ var Dashboard = module.exports = React.createClass({
   },
 
   render: function() {
+    var auth = this.props.auth;
+    var authActions = this.props.authActions;
+    var assignments = this.props.assignments;
+    var assignmentActions = this.props.assignmentActions;
+
     return (
+
       <div>
-        <HeaderBox handleAuthClick={this.props.actions.handleAuthClick} loggedInStatus={this.props.loggedInStatus} />
+        <HeaderBox {...auth} />
         <AsideBox />
-        <AssignmentBox expand={true} header='DUE RIGHT FUCKING NOW' assignments={this.props.assignments} />
-        <AssignmentBox expand={false} header='DUE FUCKING LAST WEEK' assignments={this.props.assignments} />
-        <AssignmentBox expand={false} header='DUE FUCKING LATER' assignments={this.props.assignments} />
+        <AssignmentBox { ...assignments.current} handleExpandClick={assignmentActions.handleExpandClick} />
+        <AssignmentBox { ...assignments.late} handleExpandClick={assignmentActions.handleExpandClick} />
+        <AssignmentBox { ...assignments.upcoming} handleExpandClick={assignmentActions.handleExpandClick} />
       </div>
     );
   }
