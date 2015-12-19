@@ -9,7 +9,7 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  position: fixed;
+  //position: fixed;
   background-color: $color-scheme5;
   top: -10px;
   text-align: left;
@@ -35,10 +35,10 @@ nav {
   font-size: 2em;
 }
 .cadet-logo {
-  align-items: flex-start;
+  padding-left: 15%;
 }
 .icon-home {
-padding-left: 35%;
+  padding-left: 35%;
 }
 .icon-files-empty {
   padding-left: 35%;
@@ -112,10 +112,11 @@ ul {
   margin-top: 30px;
 }
 li {
-  width: 58%;
+  width: 62%;
   background-color: $color-scheme4;
   list-style-type: none;
   font-weight: 700;
   padding: 10px 10px 10px 20px;
   margin: 10px 10px 10px 10px;
+  box-shadow: 0 5px 1px $color-scheme9;
 }
