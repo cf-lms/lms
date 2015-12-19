@@ -1,26 +1,39 @@
 require('isomorphic-fetch');
 var types = require(__dirname + '/../constants/action_types');
 
-module.exports.userSignup = function() {
+module.exports.handleAuthClick = function() {
   return function(dispatch, getState) {
     var state = getState();
-    var id = state.user._id;
 
-    // tell state that fetch is starting
-    dispatch(requestAssignments);
+    return fetch('http://localhost:3000/auth')
+    .then(function(res) {
+        if (res.status <= 200 && res.status > 300) {
 
-    return fetch('/auth')
-      .then(function(result) {
-        if (result.status === 200) {
-          return result.json();
+          conlose.log('HOLY SHIT');
+          // set cookie
+          // return username and token
+
+          return {
+            type: HANDLE_AUTH_CLICK,
+            data: res.json()
+          };
         }
         throw 'request failed';
       })
-      .then(function(jsonResult) {
-        dispatch(receiveAssignments(jsonResult));
+      .then(function(jsonRes) {
+        dispatch(receiveAssignments(jsonRes));
       })
       .catch(function(err) {
         console.log('unable to fetch assignments');
       });
   };
 };
+
+module.exports.loggedInStatus = function() {
+  var state = getState();
+  return {
+    type: LOGGED_IN_STATUS,
+    status: !state.loggedInStatus
+  };
+};
+
