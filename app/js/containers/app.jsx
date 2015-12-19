@@ -9,8 +9,8 @@ function mapStateToProps(state) {
   console.log(state);
   return {
     assignments: state.assignmentReducer,
-    handleAuthClick: state.handleAuthClick,
-    loggedInStatus: state.authReducer[0].loggedInStatus
+    handleAuthClick: state.authReducer.handleAuthClick,
+    loggedInStatus: state.authReducer.loggedInStatus
   };
 }
 

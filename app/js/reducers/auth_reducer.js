@@ -1,9 +1,9 @@
 var types = require(__dirname + '/../constants/action_types');
 
-var initialState = [{
+var initialState = {
   user: '',
-  loggedInStatus: false
-}];
+  loggedInStatus: false,
+};
 
 module.exports = function authentication(state, action) {
   var previousState = (state ? state : initialState);
@@ -17,6 +17,11 @@ module.exports = function authentication(state, action) {
     case types.LOGGED_IN_STATUS:
       return [{
         loggedInStatus: action.status
+      }].concat(previousState);
+
+    case types.HANDLE_AUTH_CLICK:
+      return [{
+        handleAuthClick: action.data
       }].concat(previousState);
 
     default:

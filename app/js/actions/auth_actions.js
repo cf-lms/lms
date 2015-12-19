@@ -1,7 +1,7 @@
 require('isomorphic-fetch');
 var types = require(__dirname + '/../constants/action_types');
 
-module.exports.userSignup = function() {
+module.exports.handleAuthClick = function() {
   return function(dispatch, getState) {
     var state = getState();
 
@@ -12,7 +12,10 @@ module.exports.userSignup = function() {
           // set cookie
           // return username and token
 
-          return result.json();
+          return {
+            type: HANDLE_AUTH_CLICK,
+            data: result.json()
+          };
         }
         throw 'request failed';
       })
@@ -32,3 +35,4 @@ module.exports.loggedInStatus = function() {
     status: !state.loggedInStatus
   };
 };
+
