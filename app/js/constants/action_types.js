@@ -1,6 +1,7 @@
 //login actions
 module.exports.USER_SIGNUP = 'USER_SIGNUP';
 module.exports.USER_LOGIN = 'USER_LOGIN';
+module.exports.GET_TOKEN = 'GET_TOKEN';
 
 // network actions
 module.exports.REQUEST_ASSIGNMENTS = 'REQUEST_ASSIGNMENTS';

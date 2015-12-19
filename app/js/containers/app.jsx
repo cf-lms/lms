@@ -8,7 +8,8 @@ var Dashboard = require(__dirname + '/dashboard.jsx');
 function mapStateToProps(state) {
   return {
     assignments: state.assignmentReducer,
-    loggedInStatus: state.authReducer.loggedInStatus
+    loggedInStatus: state.authReducer.loggedInStatus,
+    path: state.authReducer.path
   };
 }
 

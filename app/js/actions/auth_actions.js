@@ -1,30 +1,25 @@
 require('isomorphic-fetch');
 var types = require(__dirname + '/../constants/action_types');
 
-module.exports.handleAuthClick = function() {
-  return function(dispatch, getState) {
-    var state = getState();
+module.exports.getToken = function(path) {
+  return function(dispatch) {
 
-    return fetch('http://localhost:3000/auth')
+    return fetch('http://localhost:3000/auth/token' + path)
     .then(function(res) {
-        if (res.status <= 200 && res.status > 300) {
+        if (res.status >= 200 && res.status < 300) {
 
-          conlose.log('HOLY SHIT');
+          //console.log(res.json());
           // set cookie
-          // return username and token
-
-          return {
-            type: HANDLE_AUTH_CLICK,
-            data: res.json()
-          };
-        }
-        throw 'request failed';
+          return res.json();
+        } else {
+        throw 'request failed';}
       })
-      .then(function(jsonRes) {
-        dispatch(receiveAssignments(jsonRes));
+      .then(function(resJson) {
+        document.cookie = 'token=' + resJson.token;
+        location.assign('/');
       })
       .catch(function(err) {
-        console.log('unable to fetch assignments');
+        console.log(err);
       });
   };
 };
@@ -36,4 +31,21 @@ module.exports.loggedInStatus = function() {
     status: !state.loggedInStatus
   };
 };
+/*
+module.exports.getToken = function(path) {
+  alert('hello world');
+  return fetch('http://localhost:3000/auth/token' + path)
+    .then(function(res) {
+      return {
+        type: HANDLE_AUTH_CLICK,
+        data: res.json()
+      };
+    })
+    .then(function(jsonRes) {
+      dispatch(receiveAssignments(jsonRes));
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
+};*/
 
