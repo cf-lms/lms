@@ -1,8 +1,8 @@
 var types = require(__dirname + '/../constants/action_types');
 var assign = require('object-assign');
 
-var initialState = {
-  current: {
+var initialState = [
+  {
     isFetching: false,
     data: [{title: 'Some assignment from the store', id: 123}],
     lastUpdated: '',
@@ -10,7 +10,7 @@ var initialState = {
     header: 'Due Right Now',
     context: 'current'
   },
-  upcoming: {
+  {
     isFetching: false,
     data: [{title: 'some upcoming assignment', id: 456}],
     lastUpdated: '',
@@ -18,7 +18,7 @@ var initialState = {
     header: 'Due Later',
     context: 'upcoming'
   },
-  late: {
+  {
     isFetching: false,
     data: [{title: 'some late assignment', id: 789}],
     lastUpdated: '',
@@ -26,11 +26,10 @@ var initialState = {
     header: 'Past Due',
     context: 'late'
   }
-};
+];
 
 module.exports = function assignments(state, action) {
   var previousState = (state ? state : initialState);
-
   switch(action.type) {
     case types.ADD_ASSIGNMENT:
       return [{
@@ -41,9 +40,16 @@ module.exports = function assignments(state, action) {
       }].concat(previousState);
 
     case types.HANDLE_EXPAND_CLICK:
-      state[action.context].expand = action.expand;
-      console.log(state);
-      return state;
+      return state.map(function(assignment) {
+        if(assignment.context !== action.context) {
+          return assignment;
+        }
+        return assign(
+          {},
+          assignment,
+          {expand: action.expand}
+        );
+      });
 
     default:
       return previousState;

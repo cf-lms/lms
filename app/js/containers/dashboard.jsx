@@ -24,9 +24,9 @@ var Dashboard = module.exports = React.createClass({
       <div>
         <HeaderBox {...auth} />
         <AsideBox />
-        <AssignmentBox { ...assignments.current} handleExpandClick={assignmentActions.handleExpandClick} />
-        <AssignmentBox { ...assignments.late} handleExpandClick={assignmentActions.handleExpandClick} />
-        <AssignmentBox { ...assignments.upcoming} handleExpandClick={assignmentActions.handleExpandClick} />
+        <AssignmentBox { ...assignments[0]} handleExpandClick={assignmentActions.handleExpandClick} />
+        <AssignmentBox { ...assignments[1]} handleExpandClick={assignmentActions.handleExpandClick} />
+        <AssignmentBox { ...assignments[2]} handleExpandClick={assignmentActions.handleExpandClick} />
       </div>
     );
   }
