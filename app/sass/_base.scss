@@ -35,7 +35,7 @@ body {
 ::-webkit-scrollbar-thumb {
   height: 50px; 
   background-color: $color-scheme3; 
-  border-radius: 2px;
+  border-radius: 5px;
 }
 ::-webkit-scrollbar-corner { 
   background-color: $color-scheme3;
@@ -100,7 +100,7 @@ article {
   width: 77%;
 }
 h1{
-  width: 62%;
+  width: 87%;
   background-color: $color-scheme4;
   font-family: $heading-sans-serif;
   font-size: 2em;
