@@ -2,7 +2,7 @@ var chai = require('chai');
 var chaihttp = require('chai-http');
 chai.use(chaihttp);
 var expect = chai.expect;
-var testServer = require('express')();
+var testServer = require(__dirname + '/../lib/test_server');
 
 process.env.CLIENT_ID = '123';
 process.env.CLIENT_SECRET = 'abc';
@@ -10,22 +10,10 @@ process.env.HOST = 'localhost:5000';
 process.env.MONGOLAB_URI = 'mongodb://localhost/lms_test';
 process.env.APP_SECRET = 'helloworld';
 
-require(__dirname + '/../server');
+var server = require(__dirname + '/../server');
 var mongoose = require('mongoose');
 
 describe('The git routes', function() {
-  before(function() {
-    testServer.post('/user/repos', function(req, res) {
-      res.json({msg: 'bravo'});
-    });
-    testServer.post('/login/oauth/access_token', function(req, res) {
-      res.json({access_token: '123token'});
-    });
-    testServer.get('/user', function(req, res) {
-      res.json({login: 'someguy'});
-    });
-    this.server = testServer.listen(5000);
-  }.bind(this));
   before(function(done) {
     chai.request('localhost:3000')
       .get('/auth/token?code=notarealcode')
@@ -36,17 +24,19 @@ describe('The git routes', function() {
   });
   after(function(done) {
     mongoose.connection.db.dropDatabase(function() {
+      server.close();
       done();
     });
-    this.server.close(function() {console.log('done')});
+    testServer.close(function() {console.log('done')});
   }.bind(this));
-  it('should create a new repo', function(done) {
+  it('should create a course', function(done) {
     chai.request('localhost:3000')
-      .post('/git/create/repo')
+      .post('/git/create/course')
       .set('token', this.token)
+      .send({repo: 'dummy', readme: '/course/readme.md'})
       .end(function(err, res) {
         expect(err).to.eql(null);
-        expect(res.body.msg).to.eql('bravo');
+        expect(res.body).to.have.property('assignments')
         done();
       });
   });
