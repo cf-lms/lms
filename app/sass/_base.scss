@@ -9,13 +9,39 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  //position: fixed;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+  overflow-y: scroll;
+  overflow-x: hidden;
   background-color: $color-scheme5;
-  top: -10px;
   text-align: left;
   margin: 1.5% 1.5% 1.5% 7.5%;
   width: 85%;
   height: 100%;
+}
+::-webkit-scrollbar { 
+  width: 12px; height: 2px;
+}
+::-webkit-scrollbar-button {
+  background-color: $color-scheme3; 
+}
+::-webkit-scrollbar-track {
+  background-color: $color-scheme3;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: $color-scheme2;
+}
+::-webkit-scrollbar-thumb {
+  height: 50px; 
+  background-color: $color-scheme3; 
+  border-radius: 2px;
+}
+::-webkit-scrollbar-corner { 
+  background-color: $color-scheme3;
+}
+::-webkit-resizer { 
+  background-color: $color-scheme2;
 }
 nav {
   display: flex;
@@ -24,7 +50,7 @@ nav {
   flex-wrap: nowrap;
   justify-content: space-around;
   position: fixed;
-  top: 10px;
+  top: 20px;
   left: 75px;
   background-color: $color-scheme3;
   float: left;

@@ -28,7 +28,7 @@ gulp.task('sass:dev', function() {
   return gulp.src('./app/sass/**.scss')
   .pipe(maps.init())
   .pipe(sass().on('error', sass.logError))
-  .pipe(minifyCss())
+  //.pipe(minifyCss())
   .pipe(maps.write('./'))
   .pipe(gulp.dest('build/css'));
 });
@@ -54,7 +54,7 @@ gulp.task('jscs', function() {
 });
 
 gulp.task('lint', function () {
-  return gulp.src(['lib/**/*.js', 'app/js/**/*.jsx', '!node_modules/**'])
+  return gulp.src(['lib/**/*.js', 'app/js/**/*.js', 'app/js/**/*.jsx', '!node_modules/**'])
   .pipe(eslint.format())
   .pipe(eslint.failAfterError());
 });
