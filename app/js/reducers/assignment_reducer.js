@@ -21,7 +21,7 @@ var initialState = [
     context: 'late'
   },
   {
-    data: [{_id: 0, type: '', name: '', courseID: ''}],
+    data: [{_id: 0, name: 'No Assignments'}],
     expand: false,
     header: 'Turned In',
     context: 'turnedIn'

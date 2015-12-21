@@ -9,7 +9,7 @@ module.exports = React.createClass({
     return (
       <article>
         <AssignmentHeader {...this.props} onExpandClick={this.props.handleExpandClick} />
-        {this.props.expand ? <AssignmentList { ...this.props} /> : null }
+        {this.props.expand ? <AssignmentList { ...this.props} /> : null}
       </article>
     );
   }

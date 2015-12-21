@@ -7,9 +7,6 @@ module.exports.getToken = function(path) {
     return fetch('http://localhost:3000/auth/token' + path)
     .then(function(res) {
         if (res.status >= 200 && res.status < 300) {
-
-          //console.log(res.json());
-          // set cookie
           return res.json();
         } else {
         throw 'request failed';}

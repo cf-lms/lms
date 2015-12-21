@@ -23,7 +23,6 @@ authRouter.get('test', function(req, res) {
 });
 
 authRouter.get('/token', function(req, res) {
-  console.log(req.query);
   request
     .post((host || 'https://github.com') + '/login/oauth/access_token')
     .query({client_id: clientId})

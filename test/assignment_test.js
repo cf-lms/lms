@@ -45,8 +45,7 @@ describe('the assignment routes', function() {
   describe('routes that need an assignment', function() {
 
     beforeEach(function(done) {
-      (new Assignment({type: 'read', description: 'learn c the hard way', courseID: 'cCourse'})).save(function(err, data) {
-        expect(err).to.eql(null);
+      (new Assignment({name: 'test', type: 'read', description: 'learn c the hard way', courseID: 'cCourse'})).save(function(err, data) {
         this.assignment = data;
         done();
       }.bind(this));
