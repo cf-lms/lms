@@ -11,7 +11,7 @@ module.exports = React.createClass({
 
   handleSubmit: function(e) {
     e.preventDefault();
-    alert('Thanks for turning the assignment');
+    this.props.handleSubmit(this.props.id, this.props.context, this.props.updateAssignments);
   },
 
   render: function() {

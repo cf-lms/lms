@@ -18,7 +18,7 @@ describe('the course routes', function() {
 
   it('should be able to get all courses', function(done) {
     chai.request('localhost:3000')
-      .get('/api/all-courses')
+      .get('/api/courses')
       .end(function(err, res) {
         expect(err).to.eql(null);
         expect(Array.isArray(res.body)).to.eql(true);
