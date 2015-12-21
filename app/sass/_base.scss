@@ -33,7 +33,7 @@ body {
   background-color: $color-scheme2;
 }
 ::-webkit-scrollbar-thumb {
-  height: 50px; 
+  height: 25px; 
   background-color: $color-scheme3; 
   border-radius: 5px;
 }
@@ -100,7 +100,7 @@ article {
   width: 77%;
 }
 h1{
-  width: 87%;
+  width: 62%;
   background-color: $color-scheme4;
   font-family: $heading-sans-serif;
   font-size: 2em;
@@ -109,7 +109,7 @@ h1{
   padding: 20px 20px 20px 20px;
 }
 h2 {
-  width: 62%;
+  width: 87%;
   background-color: $color-scheme1;
   font-family: $heading-sans-serif;
   font-size: 1.5em;
@@ -123,14 +123,12 @@ h3 {
 }
 input {
   font-size: 100%;
+  color: $color-scheme5;  
   background-color: $color-scheme1;
-  border: 1px solid $color-scheme3;
-  border-radius: 2px;
-  background-repeat: no-repeat;
-  background-position: 8px 9px;
-  display: block;
+  border-radius: 10px;
   margin-left: 30px;
   margin-bottom: 10px;
+  padding: 1em 1em 1em;
 }
 ul {
   padding: 10px 10px 10px 10px;
@@ -138,7 +136,7 @@ ul {
   margin-top: 30px;
 }
 li {
-  width: 62%;
+  width: 87%;
   background-color: $color-scheme4;
   list-style-type: none;
   font-weight: 700;
