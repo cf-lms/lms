@@ -1,13 +1,21 @@
 @import 'buttons/index';
 
+button {
+  @include lms-button;
+  padding: 10px 10px 10px 10px;
+}
+
 .success-button {
-  @include lms-button(1em 1em 1em);
+  @include lms-button;
+  padding: 10px 10px 10px 10px;
 }
 
 .caution-button {
-  @include lms-button(1em 1em 1em, $caution-color);
+  @include lms-button($caution-color);
+  padding: 10px 10px 10px 10px;
 }
 
 .danger-button {
-  @include lms-button(1em 1em 1em, $danger-color);
+  @include lms-button($danger-color);
+  padding: 10px 10px 10px 10px;
 }
