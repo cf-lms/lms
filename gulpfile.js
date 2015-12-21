@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
-var minifyCss = require('gulp-minify-css');
 var gulpWatch = require('gulp-watch');
 var sass = require('gulp-sass');
 var maps = require('gulp-sourcemaps');
@@ -22,7 +21,6 @@ gulp.task('sass:dev', function() {
   return gulp.src('./app/sass/**.scss')
   .pipe(maps.init())
   .pipe(sass().on('error', sass.logError))
-  .pipe(minifyCss({compatibility: 'ie8'}))
   .pipe(maps.write('./'))
   .pipe(gulp.dest('build/css'));
 });
