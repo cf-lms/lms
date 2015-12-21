@@ -6,7 +6,7 @@ module.exports.fetchAssignments = function(callback, secondCallback) {
   return function(dispatch) {
     return fetch('http://localhost:3000/api/assignments')
       .then(function(res) {
-        if (res.status <= 200 || res.status > 300) {
+        if (res.status >= 200 && res.status > 300) {
 
           return res.json();
         }

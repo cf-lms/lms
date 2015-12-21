@@ -11,7 +11,7 @@ module.exports = React.createClass({
     var assignmentNodes = this.props.data.map(function(assignment) {
       return (
         <Assignment key={assignment._id} id={assignment._id} context={context} handleSubmit={handleSubmit} updateAssignments={updateAssignments}>
-          {assignment.description}
+          {assignment.name}
         </Assignment>
       );
     });

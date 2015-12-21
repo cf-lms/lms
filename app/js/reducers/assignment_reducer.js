@@ -4,25 +4,25 @@ var lodash = require('lodash');
 
 var initialState = [
   {
-    data: [{_id: 0, description: 'No Assignments'}],
+    data: [{_id: 0, name: 'No Assignments'}],
     expand: false,
     header: 'Due Later',
     context: 'upcoming'
   },
   {
-    data: [{_id: 0, description: 'No Assignments'}],
+    data: [{_id: 0, name: 'No Assignments'}],
     expand: true,
     header: 'Due Right Now',
     context: 'current'
   },
   {
-    data: [{_id: 0, description: 'No Assignments'}],
+    data: [{_id: 0, name: 'No Assignments'}],
     expand: false,
     header: 'Past Due',
     context: 'late'
   },
   {
-    data: [{_id: 0, type: '', description: '', courseID: ''}],
+    data: [{_id: 0, type: '', name: '', courseID: ''}],
     expand: false,
     header: 'Turned In',
     context: 'turnedIn'
@@ -107,6 +107,7 @@ module.exports = function assignments(state, action) {
         }
 
         for (var i = 0; i < assignment.data.length; i++) {
+
           if(assignment.data[i]._id === action._id) {
             action.completedAssignment = assignment.data.splice(i, 1);
             action.completedAssignment.turnedIn = action.turnedIn;

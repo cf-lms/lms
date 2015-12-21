@@ -4,7 +4,7 @@
   "description": "an lms for use by codefellows",
   "main": "server.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test"
+    "test": "./node_modules/mocha/bin/mocha test/client_test && ./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",

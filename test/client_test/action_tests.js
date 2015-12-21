@@ -19,9 +19,20 @@ describe('the assignment actions', function() {
   it('should return an object with the type title', function() {
     var expectedOutput = {
       type: types.RECEIVE_ASSIGNMENTS,
-      newAssignments: 'testing'
+      upcoming: 'testing',
+      current: 'test',
+      late: 'testy',
+      turnedIn: 'testify'
     };
-    expect(assignmentActions.receiveAssignments('testing')).to.eql(expectedOutput);
+    expect(assignmentActions.receiveAssignments('testing', 'test', 'testy', 'testify')).to.eql(expectedOutput);
+  });
+
+  it('should return a function invocation when calling sort assignments', function() {
+    var callback = function() {
+      return 'testing123';
+    };
+
+    expect(assignmentActions.sortAssignments([], callback)).to.eql('testing123');
   });
 
   describe('test that needs a DB', function() {
