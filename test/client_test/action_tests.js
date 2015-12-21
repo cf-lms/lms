@@ -3,6 +3,10 @@ var assignmentActions = require(__dirname + '/../../app/js/actions/assignment_ac
 var authActions = require(__dirname + '/../../app/js/actions/auth_actions.js');
 var types = require(__dirname + '/../../app/js/constants/action_types.js');
 
+process.env.MONGOLAB_URI = 'mongodb://localhost/lms_test';
+require(__dirname + '/../../server.js');
+var mongoose = require('mongoose');
+
 describe('the assignment actions', function() {
 
   it('should change the boolean value of expand', function() {
@@ -37,13 +41,7 @@ describe('the assignment actions', function() {
 
   describe('test that needs a DB', function() {
 
-    before(function() {
-      process.env.MONGOLAB_URI = 'mongodb://localhost/lms_test';
-      require(__dirname + '/../../server.js');
-    });
-
     after(function(done) {
-      var mongoose = require('mongoose');
       mongoose.connection.db.dropDatabase(function() {
         done();
       });

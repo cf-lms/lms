@@ -9,7 +9,7 @@ module.exports = React.createClass({
       <header>
         <h1>Cadet - Better than Canvas</h1>
         {this.props.path}
-        <AuthButton handleAuthClick={this.props.path} loggedInStatus={this.props.loggedInStatus} />
+        <AuthButton {...this.props} />
       </header>
     );
   }
