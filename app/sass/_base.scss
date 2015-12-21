@@ -6,9 +6,7 @@ body {
   font-family: $primary-sans-serif;
 }
 .main {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  @include flex-format;
   top: 0;
   bottom: 20;
   position: fixed;
@@ -45,10 +43,8 @@ body {
   background-color: $color-scheme2;
 }
 nav {
-  display: flex;
-  flex-direction: column;
+  @include flex-format;
   align-items: flex-start;
-  flex-wrap: nowrap;
   justify-content: space-around;
   position: fixed;
   top: 20px;
@@ -56,6 +52,7 @@ nav {
   background-color: $color-scheme3;
   float: left;
   padding: 2px 2px 2px 2px;
+  min-width: 120px;
   width: 10%;
   height: 92.5%;
   text-align: center;
@@ -65,46 +62,21 @@ nav {
   position: absolute;
   top: 25px;
   padding-left: 15%;
-}
-.icon-home {
-  position: absolute;
-  top: 30%;
-  padding-left: 35%;
-}
-.icon-files-empty {
-  position: absolute;
-  top: 40%;
-  padding-left: 35%;
-}
-.icon-cog {
-  position: absolute;
-  bottom: 5%;
-  padding-left: 35%;
+  max-width: 100%;
+  max-height: 100%;
 }
 .assignment-header {
   padding: 20px 20px 20px 20px;
 }
-.icon-minus {
-  text-align: last;
-  padding: 20px 20px 20px 20px;
-}
-.icon-plus {
-  text-align: last;
-  padding: 20px 20px 20px 20px;
-}
 header {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  @include flex-format($flex-direction:row);
   margin: 0 0 0 7.5%;
   width: 95%;
   background-color: $color-scheme4;
   padding: 5px 5px 20px 20px;
 }
 article { 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
+  @include flex-format;
   float: right;
   margin: 0 1.5%;
   width: 77%;
