@@ -1,6 +1,5 @@
 body {
   width: 90%;
-  margin: 10px 10px 10px 10px;
   background-color: $color-scheme8;
   text-align: center;
   font-family: $primary-sans-serif;
@@ -8,14 +7,14 @@ body {
 .main {
   @include flex-format;
   top: 0;
-  bottom: 20;
+  bottom: 20px;
   position: fixed;
   overflow-y: scroll;
   overflow-x: hidden;
   background-color: $color-scheme5;
   text-align: left;
   margin: 1.5% 1.5% 1.5% 7.5%;
-  padding: 0 0 20px 0;
+  padding: 0 0 1.250em 0;
   width: 85%;
   height: 90%;
 }
@@ -51,7 +50,7 @@ nav {
   left: 75px;
   background-color: $color-scheme3;
   float: left;
-  padding: 2px 2px 2px 2px;
+  padding: 0.125em 0.125em 0.125em 0.125em;
   min-width: 120px;
   width: 10%;
   height: 92.5%;
@@ -98,27 +97,4 @@ h2 {
   font-weight: 100;
   color: $color-scheme5;
   padding: 20px 20px 20px 20px;
-}
-input {
-  width: 120px;
-  height: 40px;
-  color: $color-scheme5;
-  background-color: $color-scheme1;
-  border: none;
-  border-radius: 10px;
-  font-size: 80%;
-  margin-bottom: 10px;
-  padding: 10px 10px 10px 10px;
-}
-li {
-  width: 88%;
-  height: 120px;
-  background-color: $color-scheme4;
-  list-style-type: none;
-  font-size: 24px;
-  font-weight: 300;
-  text-align: left;
-  padding: 10px 10px 10px 20px;
-  margin: 10px 10px 2px 2px;
-  box-shadow: 1px 5px 2px $color-scheme9;
 }
