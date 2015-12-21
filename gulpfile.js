@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
-//var minifyCss = require('gulp-minify-css');
+var minifyCss = require('gulp-minify-css');
 var gulpWatch = require('gulp-watch');
 var sass = require('gulp-sass');
 var maps = require('gulp-sourcemaps');
@@ -22,7 +22,7 @@ gulp.task('sass:dev', function() {
   return gulp.src('./app/sass/**.scss')
   .pipe(maps.init())
   .pipe(sass().on('error', sass.logError))
-  //.pipe(minifyCss())
+  .pipe(minifyCss({compatibility: 'ie8'}))
   .pipe(maps.write('./'))
   .pipe(gulp.dest('build/css'));
 });
@@ -42,13 +42,13 @@ gulp.task('sass:watch', function () {
 });
 
 gulp.task('jscs', function() {
-  return gulp.src('app/**/*.js')
+  return gulp.src(['lib/**/*.js', 'app/js/**/*.jsx'])
   .pipe(jscs())
   .pipe(stylish());
 });
 
 gulp.task('lint', function () {
-  return gulp.src(['**/*.js', '!node_modules/**'])
+  return gulp.src(['lib/**/*.js', 'app/js/**/*.js', 'app/js/**/*.jsx', '!node_modules/**'])
   .pipe(eslint())
   .pipe(eslint.format())
   .pipe(eslint.failAfterError());
