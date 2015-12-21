@@ -14,11 +14,11 @@ module.exports = React.createClass({
 
   render: function() {
     return (
-      <aside>
-        <a href="#"><img className="cadet-logo" src="images/cadet-logo.svg" alt="cadet logo" /></a>
+      <nav>
+        <a href="#"><img className="cadet-logo" src="images/cadet-logo.svg" alt="cadet logo" height="100" width="100"/></a>
         <a href="#" className="icon-home" onClick={this.handleHomeClick}></a>
         <a href="#" className="icon-cog" onClick={this.handleCourseCreatorClick}></a>
-      </aside>
+      </nav>
     );
   }
 });

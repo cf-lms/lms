@@ -10,3 +10,4 @@ module.exports = combineReducers({
   courseReducer: courseReducer,
   viewReducer: viewReducer
 });
+

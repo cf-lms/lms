@@ -36,8 +36,8 @@ var App = React.createClass({
     return (
       <div>
         <HeaderBox
-          handleAuthClick={this.props.handleAuthClick}
-          loggedInStatus={this.props.loggedInStatus} />
+          {...this.props.auth}
+          handleAuthClick={this.props.authActions.handleAuthClick} />
         <AsideBox
           changeViewDashboard={this.props.viewActions.changeViewDashboard}
           changeViewCourseCreator={this.props.viewActions.changeViewCourseCreator} />
@@ -47,7 +47,12 @@ var App = React.createClass({
               sortAssignments={this.props.assignmentActions.sortAssignments}
               receiveAssignments={this.props.assignmentActions.receiveAssignments}
               changeViewDashboard={this.props.viewActions.changeViewDashboard} />
-          : <Dashboard />
+          : <Dashboard
+              {...this.props}
+              handleExpandClick={this.props.assignmentActions.handleExpandClick}
+              handleSubmit={this.props.assignmentActions.handleSubmit}
+              updateAssignments={this.props.assignmentActions.updateAssignments}
+            />
         }
       </div>
     );

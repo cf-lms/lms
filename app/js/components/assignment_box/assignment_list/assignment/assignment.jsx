@@ -11,16 +11,15 @@ module.exports = React.createClass({
 
   handleSubmit: function(e) {
     e.preventDefault();
-    alert('Thanks for turning the assignment');
+    this.props.handleSubmit(this.props.id, this.props.context, this.props.updateAssignments);
   },
 
   render: function() {
-    return(
+    return( 
       <li>
         <span dangerouslySetInnerHTML={this.rawMarkup()} />
-        <p>{this.props.dueDate}</p>
         <form onSubmit={this.handleSubmit}>
-          <input type="submit" value="Submit Assignment" />
+          <input type="submit" value="Submit" />
         </form>
       </li>
     );
