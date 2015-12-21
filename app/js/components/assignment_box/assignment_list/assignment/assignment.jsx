@@ -20,7 +20,7 @@ module.exports = React.createClass({
           <span dangerouslySetInnerHTML={this.rawMarkup()} />
           <p>{this.props.dueDate}</p>
           <form onSubmit={this.handleSubmit}>
-            <button type="submit" value="Submit Assignment" />
+            <input type="submit" value="Submit Assignment" />
           </form>
         </li>
     );

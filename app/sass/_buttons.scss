@@ -1,13 +1,13 @@
 @import 'buttons/index.scss';
 
 .success-button {
-  @include lms-button;
+  @include lms-button(1em 1em 1em);
 }
 
 .caution-button {
-  @include lms-button($caution-color);
+  @include lms-button(1em 1em 1em, $caution-color);
 }
 
 .danger-button {
-  @include lms-button($danger-color);
+  @include lms-button(1em 1em 1em, $danger-color);
 }

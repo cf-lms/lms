@@ -1,13 +1,9 @@
-@mixin lms-button($button-color: $success-color, $border-radius: 10px, $text-color: $color-scheme5, $font-size: 100%) {
+@mixin lms-button($button-padding, $button-color: $success-color, $border-radius: 10px, $text-color: $color-scheme5, $font-size: 100%, $margin-left: 30px, $margin-bottom: 10px) {
+button-padding: $button-padding;
 background-color:  $button-color;
 border-radius: $border-radius;
 color: $text-color;
 font-size: $font-size;
 margin-left: $margin-left;
 margin-bottom: $margin-bottom;
-button-padding: $button-padding;
 }
-
-  margin-left: 30px;
-  margin-bottom: 10px;
-  padding: 1em 1em 1em;
