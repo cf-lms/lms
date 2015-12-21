@@ -22,7 +22,7 @@ var initialState = [
     context: 'late'
   },
   {
-    data: [{_id: 2, type: '', description: '', courseID: ''}],
+    data: [{_id: 0, type: '', description: '', courseID: ''}],
     expand: false,
     header: 'Turned In',
     context: 'turnedIn'
@@ -88,7 +88,17 @@ module.exports = function assignments(state, action) {
         }
 
         if(assignment.context === 'turnedIn') {
-          debugger;
+
+          for(var i = 0; i < assignment.data.length; i++) {
+            if(assignment.data[i]._id === action._id) {
+              return assign(
+                {},
+                assignment
+              );
+
+            }
+          }
+
           return assign(
             {},
             assignment,
@@ -99,6 +109,8 @@ module.exports = function assignments(state, action) {
         for (var i = 0; i < assignment.data.length; i++) {
           if(assignment.data[i]._id === action._id) {
             action.completedAssignment = assignment.data.splice(i, 1);
+            action.completedAssignment.turnedIn = action.turnedIn;
+            break;
           }
         }
         return assignment;

@@ -31,10 +31,12 @@ module.exports.sortAssignments = function(assignments, callback) {
   var nextCoupleDays = new Date(now.getTime() + 15 * 24 * 60 * 60 * 1000);
 
   for (var i = 0; i < assignments.length; i++) {
-    var dueDate = new Date(assignments[i].dueDate);
     if(assignments[i].turnedIn === true) {
       turnedIn.push(assignments[i]);
+      continue;
     }
+
+    var dueDate = new Date(assignments[i].dueDate);
 
     if(dueDate < now) {
       late.push(assignments[i]);
@@ -66,17 +68,21 @@ module.exports.handleSubmit = function(id, context, callback) {
   return function(dispatch) {
     return fetch('http://localhost:3000/api/assignments/' + id, {
       method: 'PUT',
-      body: {turnedIn: true}
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        turnedIn: true
+      })
     })
       .then(function(res) {
         if (res.status <= 200 || res.status > 300) {
-
-          dispatch(callback(id, context));
+          return dispatch(callback(id, context));
         }
         throw 'request failed';
       })
       .catch(function(err) {
-        debugger;
         console.log('unable to update assignments');
     });
   };
