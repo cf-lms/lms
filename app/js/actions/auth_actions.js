@@ -21,11 +21,10 @@ module.exports.getToken = function(path) {
   };
 };
 
-module.exports.loggedInStatus = function() {
-  var state = getState();
+module.exports.changeLoggedInStatus = function(loggedInStatus) {
   return {
-    type: LOGGED_IN_STATUS,
-    status: !state.loggedInStatus
+    type: types.CHANGE_LOGGED_IN_STATUS,
+    loggedInStatus: !loggedInStatus
   };
 };
 

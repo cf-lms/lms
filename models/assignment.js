@@ -6,7 +6,8 @@ var assignmentSchema = new mongoose.Schema({
   description: String,
   courseID: String,
   url: String,
-  dueDate: Date
+  dueDate: Date,
+  turnedIn: {type: Boolean, default: false}
 });
 
 module.exports = exports = mongoose.model('Assignment', assignmentSchema);
