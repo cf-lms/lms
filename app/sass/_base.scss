@@ -18,11 +18,11 @@ body {
   width: 85%;
   height: 90%;
 }
-::-webkit-scrollbar { 
+::-webkit-scrollbar {
   width: 12px; height: 2px;
 }
 ::-webkit-scrollbar-button {
-  background-color: $color-scheme3; 
+  background-color: $color-scheme3;
 }
 ::-webkit-scrollbar-track {
   background-color: $color-scheme3;
@@ -31,14 +31,14 @@ body {
   background-color: $color-scheme2;
 }
 ::-webkit-scrollbar-thumb {
-  height: 25px; 
-  background-color: $color-scheme3; 
+  height: 25px;
+  background-color: $color-scheme3;
   border-radius: 5px;
 }
-::-webkit-scrollbar-corner { 
+::-webkit-scrollbar-corner {
   background-color: $color-scheme3;
 }
-::-webkit-resizer { 
+::-webkit-resizer {
   background-color: $color-scheme2;
 }
 nav {
@@ -65,7 +65,7 @@ nav {
   max-height: 100%;
 }
 .assignment-header {
-  padding: 20px 20px 20px 20px;
+  padding: 10px 20px 10px 20px;
   margin-left: 0;
 }
 header {
@@ -74,7 +74,7 @@ header {
   width: 100%;
   background-color: $color-scheme4;
 }
-article { 
+article {
   @include flex-format;
   float: right;
   width: 90%;

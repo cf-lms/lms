@@ -24,7 +24,6 @@ assignmentRouter.post('/assignments', jsonParser(), function(req, res) {
 });
 
 assignmentRouter.put('/assignments/:id', jsonParser(), function(req, res) {
-  console.log(req.params.id);
   Assignment.findByIdAndUpdate(req.params.id, {turnedIn: req.body.turnedIn}, function(err, data) {
     res.json({msg: 'updated'});
   });
