@@ -5,7 +5,7 @@ var Redux = require('redux');
 var Provider = require('react-redux').Provider;
 var App = require(__dirname + '/containers/app.jsx');
 var thunk = require('redux-thunk');
-var rootReducer = require(__dirname + '/stores/assignments_store');
+var rootReducer = require(__dirname + '/reducers/reducers');
 
 var createStoreWithMiddleware = Redux.applyMiddleware(thunk)(Redux.createStore);
 var store = createStoreWithMiddleware(rootReducer);

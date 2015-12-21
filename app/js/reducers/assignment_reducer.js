@@ -1,7 +1,6 @@
 var types = require(__dirname + '/../constants/action_types');
 
 var initialState = [{
-  user: '',
   assignments: {
     current: {
       isFetching: false,

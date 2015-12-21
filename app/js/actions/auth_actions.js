@@ -1,26 +1,51 @@
 require('isomorphic-fetch');
 var types = require(__dirname + '/../constants/action_types');
 
-module.exports.userSignup = function() {
-  return function(dispatch, getState) {
-    var state = getState();
-    var id = state.user._id;
+module.exports.getToken = function(path) {
+  return function(dispatch) {
 
-    // tell state that fetch is starting
-    dispatch(requestAssignments);
+    return fetch('http://localhost:3000/auth/token' + path)
+    .then(function(res) {
+        if (res.status >= 200 && res.status < 300) {
 
-    return fetch('/auth')
-      .then(function(result) {
-        if (result.status === 200) {
-          return result.json();
-        }
-        throw 'request failed';
+          //console.log(res.json());
+          // set cookie
+          return res.json();
+        } else {
+        throw 'request failed';}
       })
-      .then(function(jsonResult) {
-        dispatch(receiveAssignments(jsonResult));
+      .then(function(resJson) {
+        document.cookie = 'token=' + resJson.token;
+        location.assign('/');
       })
       .catch(function(err) {
-        console.log('unable to fetch assignments');
+        console.log(err);
       });
   };
 };
+
+module.exports.loggedInStatus = function() {
+  var state = getState();
+  return {
+    type: LOGGED_IN_STATUS,
+    status: !state.loggedInStatus
+  };
+};
+/*
+module.exports.getToken = function(path) {
+  alert('hello world');
+  return fetch('http://localhost:3000/auth/token' + path)
+    .then(function(res) {
+      return {
+        type: HANDLE_AUTH_CLICK,
+        data: res.json()
+      };
+    })
+    .then(function(jsonRes) {
+      dispatch(receiveAssignments(jsonRes));
+    })
+    .catch(function(err) {
+      console.log(err);
+    });
+};*/
+
