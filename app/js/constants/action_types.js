@@ -5,7 +5,6 @@ module.exports.GET_TOKEN = 'GET_TOKEN';
 
 // network actions
 module.exports.RECEIVE_ASSIGNMENTS = 'RECEIVE_ASSIGNMENTS';
-module.exports.CREATE_COURSE = 'CREATE_COURSE';
 module.exports.UPDATE_ASSIGNMENTS = 'UPDATE_ASSIGNMENTS';
 
 // ui actions
