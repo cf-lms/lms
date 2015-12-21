@@ -15,11 +15,11 @@ module.exports = React.createClass({
   },
 
   render: function() {
-    return(
+    return( 
       <li>
         <span dangerouslySetInnerHTML={this.rawMarkup()} />
         <form onSubmit={this.handleSubmit}>
-          <input type="submit" value="Submit Assignment" />
+          <input type="submit" value="Submit" />
         </form>
       </li>
     );
