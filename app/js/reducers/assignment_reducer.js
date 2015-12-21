@@ -1,6 +1,5 @@
 var types = require(__dirname + '/../constants/action_types');
 var assign = require('object-assign');
-var lodash = require('lodash');
 
 var initialState = [
   {

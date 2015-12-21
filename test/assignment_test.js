@@ -27,7 +27,7 @@ describe('the assignment routes', function() {
   });
 
   it('should be able to create an assignment', function(done) {
-    var testAssignment = {type: 'test', description: 'testing', courseID: 'thisIsAnId'};
+    var testAssignment = {type: 'test', name: 'testing', courseID: 'thisIsAnId'};
     chai.request('localhost:3000')
       .post('/api/assignments')
       .send(testAssignment)
@@ -36,7 +36,7 @@ describe('the assignment routes', function() {
         expect(err).to.eql(null);
         expect(res.text).to.have.property('_id');
         expect(res.text.type).to.eql('test');
-        expect(res.text.description).to.eql('testing');
+        expect(res.text.name).to.eql('testing');
         expect(res.text.courseID).to.eql('thisIsAnId');
         done();
     });
