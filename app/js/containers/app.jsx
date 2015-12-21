@@ -6,9 +6,6 @@ var authActions = require(__dirname + '/../actions/auth_actions');
 var Dashboard = require(__dirname + '/dashboard.jsx');
 
 function mapStateToProps(state) {
-  return {assignments: state.assignments};
-}
-
   return {
     assignments: state.assignmentReducer,
     loggedInStatus: state.authReducer.loggedInStatus,
@@ -17,8 +14,6 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(assignmentsActions, dispatch);
-};
   return {
     actions: bindActionCreators(authActions, dispatch)
   };
