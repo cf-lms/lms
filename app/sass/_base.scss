@@ -2,7 +2,7 @@ body {
   width: 90%;
   background-color: $color-scheme8;
   text-align: center;
-  font-family: $primary-sans-serif;
+  font-family: 'Fira Sans', sans-serif;
 }
 .main {
   @include flex-format;
@@ -51,50 +51,63 @@ nav {
   background-color: $color-scheme3;
   float: left;
   padding: 0.125em 0.125em 0.125em 0.125em;
-  min-width: 120px;
-  width: 10%;
-  height: 92.5%;
+  min-width: 80px;
+  width: 7%;
+  height: 92%;
   text-align: center;
   font-size: 2em;
 }
 .cadet-logo {
   position: absolute;
-  top: 25px;
+  top: 15px;
   padding-left: 15%;
   max-width: 100%;
   max-height: 100%;
 }
 .assignment-header {
-  padding: 20px 20px 20px 20px;
+  padding: 10px 20px 10px 20px;
+  margin-left: 0;
 }
 header {
   @include flex-format($flex-direction:row);
-  margin: 0 0 0 7.5%;
-  width: 95%;
+  margin: 0 7.5% 0 0;
+  width: 100%;
   background-color: $color-scheme4;
-  padding: 5px 5px 20px 20px;
 }
 article { 
   @include flex-format;
   float: right;
-  margin: 0 1.5%;
-  width: 77%;
+  width: 90%;
 }
 h1 {
-  width: 62%;
+  width: 95%;
   background-color: $color-scheme4;
-  font-family: $heading-sans-serif;
+  font-family: 'Fira Mono', ;
   font-size: 2em;
   font-weight: 100;
   color: $color-scheme5;
-  padding: 20px 20px 20px 20px;
+  margin-left: 100px;
 }
 h2 {
-  width: 87%;
+  width: 93%;
+  z-index: 5;
   background-color: $color-scheme1;
-  font-family: $heading-sans-serif;
+  font-family: 'Fira Mono', ;
   font-size: 1.5em;
   font-weight: 100;
   color: $color-scheme5;
-  padding: 20px 20px 20px 20px;
+  border-bottom: 0;
+  margin-bottom: -20px;
+  box-shadow: 1px 4px 2px $color-scheme9;
+}
+button {
+  width: 120px;
+  height: 40px;
+  color: $color-scheme5;
+  background-color: $color-scheme1;
+  border: none;
+  border-radius: 10px;
+  font-size: 80%;
+  margin-bottom: 20px;
+  padding: 10px 10px 10px 10px;
 }
