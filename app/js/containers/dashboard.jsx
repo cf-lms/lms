@@ -5,21 +5,31 @@ var HeaderBox = require(__dirname + '/../components/header_box/header_box.jsx');
 var AsideBox = require(__dirname + '/../components/aside_box/aside_box.jsx');
 
 var Dashboard = module.exports = React.createClass({
+
   componentDidMount: function() {
+    this.props.assignmentActions.fetchAssignments(this.props.assignmentActions.sortAssignments, this.props.assignmentActions.receiveAssignments);
     console.log('look ma: ' + document.cookie);
     if (this.props.path) {
       this.props.actions.getToken(this.props.path);
+      this.props.authActions.changeLoggedInStatus(getState().loggedInStatus);
     }
   },
 
   render: function() {
+    var auth = this.props.auth;
+    var authActions = this.props.authActions;
+    var assignments = this.props.assignments;
+    var assignmentActions = this.props.assignmentActions;
+
     return (
       <div>
-        <HeaderBox handleAuthClick={this.props.actions.handleAuthClick} loggedInStatus={this.props.loggedInStatus} />
+        <HeaderBox {...auth} />
         <AsideBox />
-        <AssignmentBox expand={true} header='DUE RIGHT FUCKING NOW' assignments={this.props.assignments} />
-        <AssignmentBox expand={false} header='DUE FUCKING LAST WEEK' assignments={this.props.assignments} />
-        <AssignmentBox expand={false} header='DUE FUCKING LATER' assignments={this.props.assignments} />
+        <AssignmentBox { ...assignments[1]} handleExpandClick={assignmentActions.handleExpandClick} handleSubmit={assignmentActions.handleSubmit} updateAssignments={assignmentActions.updateAssignments} />
+        <AssignmentBox { ...assignments[2]} handleExpandClick={assignmentActions.handleExpandClick} handleSubmit={assignmentActions.handleSubmit} updateAssignments={assignmentActions.updateAssignments} />
+        <AssignmentBox { ...assignments[0]} handleExpandClick={assignmentActions.handleExpandClick} handleSubmit={assignmentActions.handleSubmit} updateAssignments={assignmentActions.updateAssignments} />
+        <AssignmentBox { ...assignments[3]} handleExpandClick={assignmentActions.handleExpandClick} handleSubmit={assignmentActions.handleSubmit} updateAssignments={assignmentActions.updateAssignments} />
+
       </div>
     );
   }

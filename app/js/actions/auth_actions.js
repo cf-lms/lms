@@ -24,28 +24,10 @@ module.exports.getToken = function(path) {
   };
 };
 
-module.exports.loggedInStatus = function() {
-  var state = getState();
+module.exports.changeLoggedInStatus = function(loggedInStatus) {
   return {
-    type: LOGGED_IN_STATUS,
-    status: !state.loggedInStatus
+    type: types.CHANGE_LOGGED_IN_STATUS,
+    loggedInStatus: !loggedInStatus
   };
 };
-/*
-module.exports.getToken = function(path) {
-  alert('hello world');
-  return fetch('http://localhost:3000/auth/token' + path)
-    .then(function(res) {
-      return {
-        type: HANDLE_AUTH_CLICK,
-        data: res.json()
-      };
-    })
-    .then(function(jsonRes) {
-      dispatch(receiveAssignments(jsonRes));
-    })
-    .catch(function(err) {
-      console.log(err);
-    });
-};*/
 
