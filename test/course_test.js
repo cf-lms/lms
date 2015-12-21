@@ -27,14 +27,14 @@ describe('the course routes', function() {
   });
 
   it('should be able to create a course', function(done) {
-    var testCourse = {title: 'test', description: 'testing', weeks: []};
+    var testCourse = {name: 'test', description: 'testing', weeks: []};
     chai.request('localhost:3000')
       .post('/api/courses')
       .send(testCourse)
       .end(function(err, res) {
         expect(err).to.eql(null);
         expect(res.body).to.have.property('_id');
-        expect(res.body.title).to.eql('test');
+        expect(res.body.name).to.eql('test');
         expect(res.body.description).to.eql('testing');
         expect(Array.isArray(res.body.weeks)).to.eql(true);
         done();
@@ -44,7 +44,7 @@ describe('the course routes', function() {
   describe('routes that need a course', function() {
 
     beforeEach(function(done) {
-      (new Course({title: 'java', description: 'short of javascript', weeks: []})).save(function(err, data) {
+      (new Course({name: 'java', description: 'short of javascript', weeks: []})).save(function(err, data) {
         expect(err).to.eql(null);
         this.course = data;
         done();
