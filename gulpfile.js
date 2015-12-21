@@ -18,17 +18,17 @@ gulp.task('static:dev', function() {
   .pipe(gulp.dest('build/'));
 });
 
-// gulp.task('minify-css', function() {
-//   return gulp.src('./app/sass/**.scss')
-//     .pipe(minifyCss({compatibility: 'ie8'}))
-//     .pipe(gulp.dest('build/css'));
-// });
+gulp.task('minify-css', function() {
+  return gulp.src('./app/sass/**.scss')
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('build/css'));
+});
 
 gulp.task('sass:dev', function() {
   return gulp.src('./app/sass/**.scss')
   .pipe(maps.init())
   .pipe(sass().on('error', sass.logError))
-  .pipe(minifyCss({compatibility: 'ie8'}))
+  //.pipe(minifyCss({compatibility: 'ie8'}))
   .pipe(maps.write('./'))
   .pipe(gulp.dest('build/css'));
 });
