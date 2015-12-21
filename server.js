@@ -14,6 +14,10 @@ app.use('/api', assignmentRouter);
 app.use('/auth', authRouter);
 app.use('/git', gitRouter);
 
+app.get('*', function(req, res) {
+  res.sendFile(__dirname + '/build/index.html');
+});
+
 app.use(function(req, res) {
   res.status(404).send('could not find file');
 });

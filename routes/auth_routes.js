@@ -10,12 +10,20 @@ var host = process.env.HOST;
 var authRouter = module.exports = express.Router();
 
 authRouter.get('/', function(req, res) {
-  res.redirect('https://github.com/login/oauth/authorize/?client_id=' + clientId
-    + '&scope=user,repo'
-  );
+  
+  var redirect = 'https://github.com/login/oauth/authorize/'
+    + '?client_id=' + clientId
+    + '&scope=user,repo';
+  res.status(302).set({'location': redirect, 'Access-Control-Allow-Origin': '*'});
+  res.end();
+});
+
+authRouter.get('test', function(req, res) {
+  res.json({token: 'hello world'});
 });
 
 authRouter.get('/token', function(req, res) {
+  console.log(req.query);
   request
     .post((host || 'https://github.com') + '/login/oauth/access_token')
     .query({client_id: clientId})

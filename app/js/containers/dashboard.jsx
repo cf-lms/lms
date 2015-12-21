@@ -5,10 +5,17 @@ var HeaderBox = require(__dirname + '/../components/header_box/header_box.jsx');
 var AsideBox = require(__dirname + '/../components/aside_box/aside_box.jsx');
 
 var Dashboard = module.exports = React.createClass({
+  componentDidMount: function() {
+    console.log('look ma: ' + document.cookie);
+    if (this.props.path) {
+      this.props.actions.getToken(this.props.path);
+    }
+  },
+
   render: function() {
     return (
       <div>
-        <HeaderBox />
+        <HeaderBox handleAuthClick={this.props.actions.handleAuthClick} loggedInStatus={this.props.loggedInStatus} />
         <AsideBox />
         <AssignmentBox expand={true} header='DUE RIGHT FUCKING NOW' assignments={this.props.assignments} />
         <AssignmentBox expand={false} header='DUE FUCKING LAST WEEK' assignments={this.props.assignments} />
