@@ -25,6 +25,7 @@ var initialState = [
 
 module.exports = function assignments(state, action) {
   var previousState = (state ? state : initialState);
+
   switch(action.type) {
     case types.ADD_ASSIGNMENT:
       return [{

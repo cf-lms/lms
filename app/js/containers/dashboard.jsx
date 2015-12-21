@@ -8,9 +8,12 @@ var save = 'handleAuthClick={this.props.actions.handleAuthClick} loggedInStatus=
 var Dashboard = module.exports = React.createClass({
   componentDidMount: function() {
     this.props.assignmentActions.fetchAssignments(this.props.assignmentActions.receiveAssignments);
+    debugger;
     console.log('look ma: ' + document.cookie);
     if (this.props.path) {
       this.props.actions.getToken(this.props.path);
+      this.props.authActions.changeLoggedInStatus(getState().loggedInStatus);
+
     }
   },
 
