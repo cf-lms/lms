@@ -2,7 +2,6 @@ var expect = require('chai').expect;
 var assignmentActions = require(__dirname + '/../../app/js/actions/assignment_actions.js');
 var authActions = require(__dirname + '/../../app/js/actions/auth_actions.js');
 var types = require(__dirname + '/../../app/js/constants/action_types.js');
-var configureStore = require('redux-mock-store');
 
 describe('the assignment actions', function() {
 
