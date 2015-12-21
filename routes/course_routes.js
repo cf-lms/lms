@@ -5,7 +5,7 @@ var Course = require(__dirname + '/../models/course.js');
 
 var courseRouter = module.exports = exports = express.Router();
 
-courseRouter.get('/all-courses', function(req, res) {
+courseRouter.get('/courses', function(req, res) {
   Course.find({}, function(err, data) {
     if (err) return handleError(err, res);
 

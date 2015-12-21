@@ -5,7 +5,7 @@ var Assignment = require(__dirname + '/../models/assignment.js');
 
 var assignmentRouter = module.exports = exports = express.Router();
 
-assignmentRouter.get('/all-assignments', function(req, res) {
+assignmentRouter.get('/assignments', function(req, res) {
   Assignment.find({}, function(err, data) {
     if (err) return handleError(err, res);
 

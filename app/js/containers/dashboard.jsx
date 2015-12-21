@@ -7,6 +7,7 @@ var AsideBox = require(__dirname + '/../components/aside_box/aside_box.jsx');
 var save = 'handleAuthClick={this.props.actions.handleAuthClick} loggedInStatus={this.props.loggedInStatus}';
 var Dashboard = module.exports = React.createClass({
   componentDidMount: function() {
+    this.props.assignmentActions.fetchAssignments(this.props.assignmentActions.receiveAssignments);
     console.log('look ma: ' + document.cookie);
     if (this.props.path) {
       this.props.actions.getToken(this.props.path);

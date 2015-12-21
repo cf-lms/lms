@@ -1,28 +1,23 @@
 var types = require(__dirname + '/../constants/action_types');
 var assign = require('object-assign');
+var lodash = require('lodash');
 
 var initialState = [
   {
-    isFetching: false,
-    data: [{title: 'Some assignment from the store', id: 123}],
-    lastUpdated: '',
+    data: [{_id: 0, type: '', description: 'Some assignment from the store', courseID: ''}],
     expand: true,
     header: 'Due Right Now',
     context: 'current'
   },
   {
-    isFetching: false,
-    data: [{title: 'some upcoming assignment', id: 456}],
-    lastUpdated: '',
-    expand: true,
+    data: [],
+    expand: false,
     header: 'Due Later',
     context: 'upcoming'
   },
   {
-    isFetching: false,
-    data: [{title: 'some late assignment', id: 789}],
-    lastUpdated: '',
-    expand: true,
+    data: [{_id: 2, type: '', description: '', courseID: ''}],
+    expand: false,
     header: 'Past Due',
     context: 'late'
   }
@@ -48,6 +43,20 @@ module.exports = function assignments(state, action) {
           {},
           assignment,
           {expand: action.expand}
+        );
+      });
+
+    case types.RECEIVE_ASSIGNMENTS:
+      return state.map(function(assignment) {
+
+        if(assignment.context !== 'upcoming') {
+          return assignment;
+        }
+
+        return assign(
+          {},
+          assignment,
+          {data: action.newAssignments}
         );
       });
 
