@@ -2,7 +2,7 @@ var chai = require('chai');
 var chaihttp = require('chai-http');
 chai.use(chaihttp);
 var expect = chai.expect;
-var testServer = require(__dirname + '/../lib/test_server');
+var git = (__dirname + '/../lib/git_util');
 var Course = require(__dirname + '/../models/course.js');
 var Assignment = require(__dirname + '/../models/assignment.js');
 
@@ -13,6 +13,7 @@ process.env.MONGOLAB_URI = 'mongodb://localhost/lms_test';
 process.env.APP_SECRET = 'helloworld';
 
 var server = require(__dirname + '/../server');
+var testServer = require(__dirname + '/../lib/test_server');
 var mongoose = require('mongoose');
 
 describe('The git routes', function() {
@@ -36,7 +37,8 @@ describe('The git routes', function() {
       .send({repo: 'dummy', readme: '/course/readme.md'})
       .end(function(err, res) {
         expect(err).to.eql(null);
-        expect(res.body).to.have.property('assignments')
+        expect(res.body).to.have.property('assignments');
+        expect(res.body).to.have.property('course');
         done();
       });
   });
@@ -73,14 +75,14 @@ describe('the course routes', function() {
   });
 
   it('should be able to create a course', function(done) {
-    var testCourse = {title: 'test', description: 'testing', weeks: []};
+    var testCourse = {name: 'test', description: 'testing', weeks: []};
     chai.request('localhost:3000')
       .post('/api/courses')
       .send(testCourse)
       .end(function(err, res) {
         expect(err).to.eql(null);
         expect(res.body).to.have.property('_id');
-        expect(res.body.title).to.eql('test');
+        expect(res.body.name).to.eql('test');
         expect(res.body.description).to.eql('testing');
         expect(Array.isArray(res.body.weeks)).to.eql(true);
         done();
@@ -107,7 +109,7 @@ it('should be able to get all assignments', function(done) {
 });
 
 it('should be able to create an assignment', function(done) {
-  var testAssignment = {type: 'test', description: 'testing', courseID: 'thisIsAnId'};
+  var testAssignment = {name: 'test', description: 'testing', courseID: 'thisIsAnId'};
   chai.request('localhost:3000')
     .post('/api/assignments')
     .send(testAssignment)
@@ -115,7 +117,7 @@ it('should be able to create an assignment', function(done) {
       res.text = JSON.parse(res.text);
       expect(err).to.eql(null);
       expect(res.text).to.have.property('_id');
-      expect(res.text.type).to.eql('test');
+      expect(res.text.name).to.eql('test');
       expect(res.text.description).to.eql('testing');
       expect(res.text.courseID).to.eql('thisIsAnId');
       done();
@@ -125,7 +127,7 @@ it('should be able to create an assignment', function(done) {
   describe('routes that need an assignment', function() {
 
     beforeEach(function(done) {
-      (new Assignment({type: 'read', description: 'learn c the hard way', courseID: 'cCourse'})).save(function(err, data) {
+      (new Assignment({type: 'read', name: 'learn c the hard way', courseID: 'cCourse'})).save(function(err, data) {
         expect(err).to.eql(null);
         this.assignment = data;
         done();
@@ -160,7 +162,7 @@ it('should be able to create an assignment', function(done) {
 describe('routes that need a course', function() {
 
   beforeEach(function(done) {
-    (new Course({title: 'java', description: 'short of javascript', weeks: []})).save(function(err, data) {
+    (new Course({title: 'java', name: 'short of javascript', weeks: []})).save(function(err, data) {
       expect(err).to.eql(null);
       this.course = data;
       done();
@@ -190,3 +192,4 @@ describe('routes that need a course', function() {
     }.bind(this));
   });
 });
+

@@ -11,7 +11,8 @@ var host = process.env.HOST || 'https://api.github.com';
 
 var gitRouter = module.exports = express.Router();
 
-gitRouter.post('/create/course', parseJson, eatToken, function(req,res) {
+gitRouter.post('/create/course', parseJson, function(req,res) {
+  req.token = "f94990a2c26d7b568a5faa1dc53f11c94fb5d2dd";
   git.getReadme(req, function(contents) {
     parseMd(contents, function(courseData) {
       req.courseData = courseData;

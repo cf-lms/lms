@@ -1,9 +1,12 @@
 var mongoose = require('mongoose');
 
 var assignmentSchema = new mongoose.Schema({
-  type: {type: String, required: true},
+  name: {type: String, required: true},
+  type: String,
   description: String,
-  courseID: String
+  courseID: String,
+  url: String,
+  dueDate: Date
 });
 
 module.exports = exports = mongoose.model('Assignment', assignmentSchema);
