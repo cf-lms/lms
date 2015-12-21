@@ -1,6 +1,5 @@
 var gulp = require('gulp');
 var eslint = require('gulp-eslint');
-var minifyCss = require('gulp-minify-css');
 var gulpWatch = require('gulp-watch');
 var sass = require('gulp-sass');
 var maps = require('gulp-sourcemaps');
