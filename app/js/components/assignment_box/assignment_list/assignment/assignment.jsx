@@ -18,9 +18,8 @@ module.exports = React.createClass({
     return( 
       <li>
         <span dangerouslySetInnerHTML={this.rawMarkup()} />
-        <form onSubmit={this.handleSubmit}>
-          <input type="submit" value="Submit" />
-        </form>
+        <p>{this.props.dueDate}</p>
+          <button onClick={this.handleSubmit} type="submit">Submit</button>
       </li>
     );
   }

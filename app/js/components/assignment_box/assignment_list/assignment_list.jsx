@@ -17,9 +17,9 @@ module.exports = React.createClass({
     });
 
     return (
-      <div>
+      <ul>
         {assignmentNodes}
-      </div>
+      </ul>
     );
   }
 });

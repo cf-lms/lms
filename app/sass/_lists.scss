@@ -1,12 +1,16 @@
+ul {
+  background-color: $color-scheme5;
+}
+
 li {
-  width: 88%;
+  width: 97.5%;
   height: 120px;
-  background-color: $color-scheme4;
+  background-color: $color-scheme5;
   list-style-type: none;
   font-size: 24px;
   font-weight: 300;
   text-align: left;
-  padding: 10px 10px 10px 20px;
-  margin: 10px 10px 2px 2px;
+  padding: 10px 10px 20px 20px;
+  margin: 6px 0 10px -40px;
   box-shadow: 1px 5px 2px $color-scheme9;
 }

@@ -1,7 +1,6 @@
 require('isomorphic-fetch');
 var types = require(__dirname + '/../constants/action_types');
 
-
 module.exports.fetchAssignments = function(callback, secondCallback) {
   return function(dispatch) {
     return fetch('http://localhost:3000/api/assignments')
@@ -76,14 +75,14 @@ module.exports.handleSubmit = function(id, context, callback) {
         turnedIn: true
       })
     })
-      .then(function(res) {
-        if (res.status <= 200 || res.status > 300) {
-          return dispatch(callback(id, context));
-        }
-        throw 'request failed';
-      })
-      .catch(function(err) {
-        console.log('unable to update assignments');
+    .then(function(res) {
+      if (res.status <= 200 || res.status > 300) {
+        return dispatch(callback(id, context));
+      }
+      throw 'request failed';
+    })
+    .catch(function(err) {
+      console.log('unable to update assignments');
     });
   };
 };
