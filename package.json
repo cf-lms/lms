@@ -4,8 +4,7 @@
   "description": "an lms for use by codefellows",
   "main": "server.js",
   "scripts": {
-    "pretest": "./node_modules/gulp/bin/gulp.js test",
-    "test": "./node_modules/mocha/bin/mocha test && ./node_modules/jest-cli/bin/jest.js"
+    "test": "./node_modules/mocha/bin/mocha test"
   },
   "repository": {
     "type": "git",
