@@ -16,13 +16,13 @@ module.exports = React.createClass({
 
   render: function() {
     return( 
-        <li>
-          <span dangerouslySetInnerHTML={this.rawMarkup()} />
-          <p>{this.props.dueDate}</p>
-          <form onSubmit={this.handleSubmit}>
-            <input type="submit" value="Submit" />
-          </form>
-        </li>
+      <li>
+        <span dangerouslySetInnerHTML={this.rawMarkup()} />
+        <p>{this.props.dueDate}</p>
+        <form onSubmit={this.handleSubmit}>
+          <input type="submit" value="Submit" />
+        </form>
+      </li>
     );
   }
 });
