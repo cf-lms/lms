@@ -13,7 +13,7 @@ var Dashboard = module.exports = React.createClass({
     var assignmentActions = this.props.assignmentActions;
 
     return (
-      <div>
+      <div className="assignments">
         <AssignmentBox { ...assignments[1]} handleExpandClick={assignmentActions.handleExpandClick} handleSubmit={assignmentActions.handleSubmit} updateAssignments={assignmentActions.updateAssignments} />
         <AssignmentBox { ...assignments[2]} handleExpandClick={assignmentActions.handleExpandClick} handleSubmit={assignmentActions.handleSubmit} updateAssignments={assignmentActions.updateAssignments} />
         <AssignmentBox { ...assignments[0]} handleExpandClick={assignmentActions.handleExpandClick} handleSubmit={assignmentActions.handleSubmit} updateAssignments={assignmentActions.updateAssignments} />

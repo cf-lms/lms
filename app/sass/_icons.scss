@@ -1,5 +1,15 @@
 @import 'icons/index';
 
+.icon-minus {
+  text-align: last;
+  padding: 20px;
+}
+
+.icon-plus {
+  text-align: last;
+  padding: 20px;
+}
+
 .icon-home:before {
   content: "\e900";
 }
@@ -98,27 +108,4 @@
 }
 .icon-git:before {
   content: "\eae2";
-}
-.icon-home {
-  position: absolute;
-  top: 20%;
-  padding-left: 35%;
-}
-.icon-files-empty {
-  position: absolute;
-  top: 30%;
-  padding-left: 35%;
-}
-.icon-cog {
-  position: absolute;
-  bottom: 5%;
-  padding-left: 35%;
-}
-.icon-minus {
-  text-align: last;
-  padding: 20px 20px 20px 20px;
-}
-.icon-plus {
-  text-align: last;
-  padding: 20px 20px 20px 20px;
 }
