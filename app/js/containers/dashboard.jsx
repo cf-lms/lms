@@ -6,10 +6,6 @@ var Dashboard = module.exports = React.createClass({
 
   componentDidMount: function() {
     this.props.assignmentActions.fetchAssignments(this.props.assignmentActions.sortAssignments, this.props.assignmentActions.receiveAssignments);
-    if (this.props.path) {
-      this.props.authActions.getToken(this.props.path);
-      this.props.authActions.changeLoggedInStatus(getState().loggedInStatus);
-    }
   },
 
   render: function() {
