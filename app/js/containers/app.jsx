@@ -32,17 +32,11 @@ function mapDispatchToProps(dispatch) {
 }
 
 var App = React.createClass({
-<<<<<<< HEAD
   componentDidMount: function() {
-      console.log(this.props);
-      if (this.props.auth[0].path) {
+    if (this.props.auth[0].path) {
       this.props.authActions.getToken(this.props.auth[0].path);
-=======
-
-  componentDidMount: function() {
+    }
     if(document.cookie) {
-      debugger;
->>>>>>> ryan-fork/sass-polishing
       this.props.authActions.changeLoggedInStatus(this.props.auth[0].loggedInStatus);
     }
   },
