@@ -40,9 +40,8 @@ var App = React.createClass({
             changeViewCourseCreator={this.props.viewActions.changeViewCourseCreator} />
         <main>
           <HeaderBox
-            {...this.props.auth}
-            handleAuthClick={this.props.authActions.handleAuthClick} />
-
+            {...this.props.auth[0]}
+            changeLoggedInStatus={this.props.authActions.changeLoggedInStatus} />
           {(this.props.view[0].currentView === 'course-creator')
             ? <CourseCreator
                 initCourse={this.props.courseActions.initCourse}
