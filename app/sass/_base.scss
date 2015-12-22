@@ -18,11 +18,11 @@ body {
   width: 85%;
   height: 90%;
 }
-::-webkit-scrollbar { 
+::-webkit-scrollbar {
   width: 12px; height: 2px;
 }
 ::-webkit-scrollbar-button {
-  background-color: $color-scheme3; 
+  background-color: $color-scheme3;
 }
 ::-webkit-scrollbar-track {
   background-color: $color-scheme3;
@@ -31,14 +31,14 @@ body {
   background-color: $color-scheme2;
 }
 ::-webkit-scrollbar-thumb {
-  height: 25px; 
-  background-color: $color-scheme3; 
+  height: 25px;
+  background-color: $color-scheme3;
   border-radius: 5px;
 }
-::-webkit-scrollbar-corner { 
+::-webkit-scrollbar-corner {
   background-color: $color-scheme3;
 }
-::-webkit-resizer { 
+::-webkit-resizer {
   background-color: $color-scheme2;
 }
 nav {
@@ -74,16 +74,20 @@ header {
   width: 100%;
   background-color: $color-scheme4;
 }
-article { 
+article {
   @include flex-format;
   float: right;
   width: 90%;
 }
+
+h1, h2, h3 {
+  font-family: $heading-font;
+}
+
 h1 {
   width: 95%;
   background-color: $color-scheme4;
-  font-family: 'Fira Mono', ;
-  font-size: 2em;
+  font-size: 2.027em;
   font-weight: 100;
   color: $color-scheme5;
   margin-left: 100px;
@@ -92,14 +96,18 @@ h2 {
   width: 93%;
   z-index: 5;
   background-color: $color-scheme1;
-  font-family: 'Fira Mono', ;
-  font-size: 1.5em;
+  font-size: 1.802em;
   font-weight: 100;
   color: $color-scheme5;
   border-bottom: 0;
   margin-bottom: -20px;
   box-shadow: 1px 4px 2px $color-scheme9;
 }
+
+h3 {
+  font-size: 1.602em
+}
+
 button {
   width: 120px;
   height: 40px;

@@ -1,11 +1,11 @@
 //Colors
 
-$color-scheme1: #18ce76; // light green 
+$color-scheme1: #18ce76; // light green
 $color-scheme2: #2185c5; // sky blue
 $color-scheme3: #3e454c; // dark grey
 $color-scheme4: #767d84; // light grey
 $color-scheme5: #FFFFFF; // white
-$color-scheme6: #F0F00E; // yellow 
+$color-scheme6: #F0F00E; // yellow
 $color-scheme7: #F00E0E; // red
 $color-scheme8: #393636; // darker grey
 $color-scheme9: #A7AAAE; // lightest grey
@@ -18,3 +18,6 @@ $shadow-color: $color-scheme9;
 
 //Heading
 $header: $color-scheme1;
+
+//Font Families
+$heading-font: "proxima-nova-soft", sans-serif;
