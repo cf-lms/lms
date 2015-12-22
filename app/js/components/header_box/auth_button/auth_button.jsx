@@ -3,6 +3,10 @@ var ReactDOM = require('react-dom');
 
 var AuthButton = module.exports = React.createClass({
 
+  onClick: function() {
+    this.props.changeLoggedInStatus(this.props.loggedInStatus);
+  },
+
   render: function() {
     return(
       <div className="login">

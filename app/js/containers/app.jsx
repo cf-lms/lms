@@ -32,6 +32,14 @@ function mapDispatchToProps(dispatch) {
 }
 
 var App = React.createClass({
+
+  componentDidMount: function() {
+    if(document.cookie) {
+      debugger;
+      this.props.authActions.changeLoggedInStatus(this.props.auth[0].loggedInStatus);
+    }
+  },
+
   render: function() {
     return (
       <div className="wrapper">

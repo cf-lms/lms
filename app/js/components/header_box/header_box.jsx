@@ -8,7 +8,6 @@ module.exports = React.createClass({
     return (
       <header>
         <h1>Cadet - Better than Canvas</h1>
-        {this.props.path}
         <AuthButton {...this.props} />
       </header>
     );
