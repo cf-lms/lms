@@ -1,155 +1,19 @@
 body {
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
+  line-height: 1.5;
 }
 
-.wrapper {
-  display: flex;
-  flex-flow: row nowrap;
-  min-height: 100%;
-  background-color: $color-scheme5;
-  width: 100%;
-  position: relative;
+p {
+  font-size: 1em;
+  margin: 0 0 1em;
 }
 
-nav {
-  flex: 0 1 7%;
-  width: 7%;
-  min-height: 100%;
-  position: fixed;
-  background-color: $color-scheme3;
-
-  ul {
-    display: flex;
-    flex-flow: column wrap;
-    min-height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-
-  li {
-    display: block;
-    flex-grow: 1;
-    list-style-type: none;
-    text-align: center;
-
-    &:first-child,
-    &:last-child {
-      flex-grow: 0;
-    }
-
-    &:first-child a {
-      height: 80px;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-
-  .cadet-logo {
-    max-height: 100%;
-    max-width: auto;
-    height: 50px;
-    width: auto;
-  }
-
-  a {
-    display: block;
-    padding: 40px 0;
-    font-size: 1.75em;
-    background-color: $color-scheme3;
-
-    &:hover {
-      background-color: darken($color-scheme3, 5%);
-      text-decoration: none;
-    }
-  }
+h1, h2 {
+  font-family: 'Fira Mono', ;
 }
 
-main {
-  flex: 0 1 93%;
-  min-height: 100%;
-  display: flex;
-  flex-flow: column wrap;
-  padding-left: 7%;
+h1 {
+  font-size: 2em;
+  color: $color-scheme5;
 }
-
-header {
-  flex: 0 1 100%;
-  display: flex;
-  flex-flow: row nowrap;
-  background-color: $color-scheme4;
-  height: 80px;
-
-  h1 {
-    flex: 0 1 90%;
-    padding-left: 1em;
-    margin: 0;
-    line-height: 80px;
-  }
-
-  .login {
-    flex: 0 1 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    a {
-      color: $color-scheme5;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-}
-
-.assignments {
-  padding: 0 2em;
-
-  article {
-    box-shadow: 1px 5px 2px $color-scheme9;
-    margin: 40px 0;
-  }
-
-  .assignment-header {
-    background-color: $color-scheme1;
-    color: $color-scheme5;
-    padding: 10px 0 10px 1em;
-    margin: 0;
-  }
-
-  ul {
-    margin: 0;
-    padding: 2em;
-  }
-
-  li {
-    list-style-type: none;
-    font-size: 1.5em;
-  }
-}
-
-// ::-webkit-scrollbar {
-//   width: 12px; height: 2px;
-// }
-// ::-webkit-scrollbar-button {
-//   background-color: $color-scheme3;
-// }
-// ::-webkit-scrollbar-track {
-//   background-color: $color-scheme3;
-// }
-// ::-webkit-scrollbar-track-piece {
-//   background-color: $color-scheme2;
-// }
-// ::-webkit-scrollbar-thumb {
-//   height: 25px;
-//   background-color: $color-scheme3;
-//   border-radius: 5px;
-// }
-// ::-webkit-scrollbar-corner {
-//   background-color: $color-scheme3;
-// }
-// ::-webkit-resizer {
-//   background-color: $color-scheme2;

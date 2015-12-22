@@ -6,7 +6,7 @@ module.exports = React.createClass({
 
   render: function() {
     return (
-      <header>
+      <header className="main-header">
         <h1>Cadet - Better than Canvas</h1>
         <AuthButton {...this.props} />
       </header>

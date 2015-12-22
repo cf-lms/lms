@@ -8,6 +8,7 @@
 
 //Import Modules: Specific Objects
 @import 'buttons/index';
+@import 'modules/index';
 @import 'icons';
 @import 'inputs';
 @import 'forms';
@@ -16,7 +17,7 @@
 //Import Base layer:
 @import 'mixins';
 @import 'typography';
-@import 'colors';
+@import 'layout';
 @import 'base';
 
 @import 'state';

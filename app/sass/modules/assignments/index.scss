@@ -1,0 +1,44 @@
+.assignments {
+  padding: 0 2em;
+
+  article {
+    box-shadow: 1px 5px 2px $color-scheme9;
+    margin: 40px 0;
+  }
+
+  ul {
+    margin: 0;
+    padding: 2em;
+  }
+
+  li {
+    list-style-type: none;
+    font-size: 1.5em;
+  }
+}
+
+.assignment-header {
+  color: $color-scheme5;
+  padding: 10px 0 10px 1em;
+  margin: 0;
+
+  & [class^="icon-"] {
+    padding-left: 20px;
+  }
+
+  .assignments-due-now & {
+    background-color: $caution-color;
+  }
+
+  .assignments-past-due & {
+    background-color: $danger-color;
+  }
+
+  .assignments-due-later & {
+    background-color: $color-scheme2;
+  }
+
+  .assignments-turned-in & {
+    background-color: $color-scheme1;
+  }
+}
