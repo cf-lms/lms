@@ -1,3 +1,10 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   font-family: 'Fira Sans', sans-serif;
   font-size: 16px;
@@ -9,11 +16,17 @@ p {
   margin: 0 0 1em;
 }
 
-h1, h2 {
-  font-family: 'Fira Mono', ;
+h1, h2, h3 {
+  font-family: $heading-font;
+  margin-top: 0;
 }
 
 h1 {
   font-size: 2em;
   color: $color-scheme5;
+}
+
+h2 {
+  font-size: 1.75em;
+  margin-bottom: 1em;
 }

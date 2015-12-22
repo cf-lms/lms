@@ -1,13 +1,13 @@
-a:link {
+a {
   color: $color-scheme4;
   text-decoration: none;
-}
 
-a:hover {
-  color: $color-scheme5;
-  text-decoration: underline;
-}
+  &:hover {
+    color: $color-scheme5;
+    text-decoration: underline;
+  }
 
-a:visited {
-  color: $color-scheme1;
+  &:visited {
+    color: $color-scheme4;
+  }
 }

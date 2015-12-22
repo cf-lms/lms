@@ -30,7 +30,7 @@ module.exports = React.createClass({
 
         <label htmlFor="course-start-date">Start Date</label>
         <input type="date" name="course-start-date" onChange={this.handleCourseStartDate} />
-        <button type="submit" onSubmit={this.handleSubmit}>Create Course</button>
+        <button type="submit" onSubmit={this.handleSubmit}>Generate</button>
       </form>
     );
   }
