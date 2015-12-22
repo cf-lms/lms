@@ -1,1 +1,39 @@
 @import 'mixins';
+
+%lms-button-defaults {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  border: 0;
+  border-radius: 8px;
+  line-height: 1.55;
+  width: auto;
+  height: auto;
+
+  &:hover, &:focus {
+    cursor: pointer;
+    border: 0;
+  }
+}
+
+button,
+.button {
+  @extend %lms-button-defaults;
+  @include lms-button;
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+
+.success-button {
+  @include lms-button;
+}
+
+.caution-button {
+  @include lms-button($caution-color);
+}
+
+.danger-button {
+  @include lms-button($danger-color);
+}

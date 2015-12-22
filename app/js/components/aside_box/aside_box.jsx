@@ -15,9 +15,11 @@ module.exports = React.createClass({
   render: function() {
     return (
       <nav>
-        <a href="#"><img className="cadet-logo" src="images/cadet-logo.svg" alt="cadet logo" height="70" width="70"/></a>
-        <a href="#" className="icon-home" onClick={this.handleHomeClick}></a>
-        <a href="#" className="icon-cog" onClick={this.handleCourseCreatorClick}></a>
+        <ul>
+          <li><a href="#"><img className="cadet-logo" src="images/cadet-logo.svg" alt="cadet logo" height="70" width="70"/></a></li>
+          <li><a href="#" className="icon-home" onClick={this.handleHomeClick}></a></li>
+          <li><a href="#" className="icon-cog" onClick={this.handleCourseCreatorClick}></a></li>
+        </ul>
       </nav>
     );
   }
