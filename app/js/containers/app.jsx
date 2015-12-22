@@ -32,6 +32,14 @@ function mapDispatchToProps(dispatch) {
 }
 
 var App = React.createClass({
+  componentDidMount: function() {
+      console.log(this.props);
+      if (this.props.auth[0].path) {
+      this.props.authActions.getToken(this.props.auth[0].path);
+      this.props.authActions.changeLoggedInStatus(this.props.auth[0].loggedInStatus);
+    }
+  },
+
   render: function() {
     return (
       <div>

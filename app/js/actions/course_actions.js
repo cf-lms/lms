@@ -2,7 +2,7 @@ require('isomorphic-fetch');
 var types = require(__dirname + '/../constants/action_types');
 
 module.exports.initCourse = function(repo, readmePath, startDate, callback, secondCallback, changeView) {
-  var request = new Request('/create/course', {
+  var request = new Request('git/create/course', {
     method: 'POST',
     headers: new Headers({
       'Accept': 'application/json',

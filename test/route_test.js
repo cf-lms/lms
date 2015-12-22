@@ -34,7 +34,7 @@ describe('The git routes', function() {
   it('should create a course', function(done) {
     chai.request('localhost:3000')
       .post('/git/create/course')
-      .set('token', this.token)
+      .set('Cookie', 'token=' + this.token)
       .send({repo: 'dummy', readme: '/course/readme.md'})
       .end(function(err, res) {
         expect(err).to.eql(null);

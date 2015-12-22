@@ -5,9 +5,11 @@ var courseRouter = require(__dirname + '/routes/course_routes');
 var assignmentRouter = require(__dirname + '/routes/assignment_routes');
 var authRouter = require(__dirname + '/routes/auth_routes');
 var gitRouter = require(__dirname + '/routes/git_routes');
+var cookie = require('cookie-parser');
 
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/lms_dev');
 
+app.use(cookie());
 app.use('/', express.static(__dirname + '/build'));
 app.use('/api', courseRouter);
 app.use('/api', assignmentRouter);
