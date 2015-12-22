@@ -5,7 +5,10 @@ var CourseForm = require(__dirname + '/create_course_form.jsx');
 module.exports = React.createClass({
   render: function() {
     return (
-      <CourseForm {...this.props} />
+      <div className="create-course">
+        <h2>Create Course</h2>
+        <CourseForm {...this.props} />
+      </div>
     );
   }
 });

@@ -1,0 +1,33 @@
+.create-course {
+  max-width: 50%;
+  margin: 40px auto 0;
+
+  h2 {
+    background-color: $color-scheme2;
+    padding: 10px 0 10px 1em;
+    margin-bottom: 0;
+    color: $color-scheme5;
+  }
+
+  form {
+    margin: 0 auto;
+    padding: 2em;
+    box-shadow: 1px 5px 2px $color-scheme9;
+  }
+
+  input,
+  label {
+    font-size: 1.2em;
+  }
+
+  input {
+    display: block;
+    width: 100%;
+    padding: 1em 0 1em 10px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    @include lms-button($size: 'large');
+  }
+}
