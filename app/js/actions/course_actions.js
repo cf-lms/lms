@@ -28,7 +28,6 @@ module.exports.initCourse = function(repo, readmePath, startDate, callback, seco
         }
       })
       .then(function(data) {
-        debugger;
         return callback(data.assignments, secondCallback);
       })
       .then(function() {
