@@ -17,7 +17,6 @@ module.exports = function authentication(state, action) {
       }].concat(previousState);
 
     case types.CHANGE_LOGGED_IN_STATUS:
-    debugger;
       return [assign(
         {},
         state,
