@@ -22,7 +22,7 @@ module.exports = React.createClass({
 
   render: function() {
     return (
-        <div id='courseForm'>
+        <div id="courseForm" className="course-form">
           <label htmlFor="course-name">Course Name</label>
           <input type="text" name="course-name" onChange={this.handleCourseName} />
 
