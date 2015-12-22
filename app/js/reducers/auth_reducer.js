@@ -1,4 +1,5 @@
 var types = require(__dirname + '/../constants/action_types');
+var assign = require('object-assign');
 
 var initialState = [{
   user: document.cookie,
@@ -15,12 +16,13 @@ module.exports = function authentication(state, action) {
         username: ''
       }].concat(previousState);
 
-    case types.LOGGED_IN_STATUS:
+    case types.CHANGE_LOGGED_IN_STATUS:
+    debugger;
       return [assign(
         {},
         state,
         {loggedInStatus: action.loggedInStatus}
-      )];
+      )].concat(previousState);
 
     case types.HANDLE_AUTH_CLICK:
       return [{

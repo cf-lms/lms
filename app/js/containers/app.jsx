@@ -32,12 +32,20 @@ function mapDispatchToProps(dispatch) {
 }
 
 var App = React.createClass({
+
+  componentDidMount: function() {
+    if(document.cookie) {
+      debugger;
+      this.props.authActions.changeLoggedInStatus(this.props.auth[0].loggedInStatus);
+    }
+  },
+
   render: function() {
     return (
       <div>
         <HeaderBox
-          {...this.props.auth}
-          handleAuthClick={this.props.authActions.handleAuthClick} />
+          {...this.props.auth[0]}
+          changeLoggedInStatus={this.props.authActions.changeLoggedInStatus} />
         <AsideBox
           changeViewDashboard={this.props.viewActions.changeViewDashboard}
           changeViewCourseCreator={this.props.viewActions.changeViewCourseCreator} />
