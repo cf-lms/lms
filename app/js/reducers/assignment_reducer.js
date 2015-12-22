@@ -6,25 +6,29 @@ var initialState = [
     data: [{_id: 0, name: 'No Assignments'}],
     expand: false,
     header: 'Due Later',
-    context: 'upcoming'
+    context: 'upcoming',
+    className: 'assignments-due-later'
   },
   {
     data: [{_id: 0, name: 'No Assignments'}],
     expand: true,
     header: 'Due Right Now',
-    context: 'current'
+    context: 'current',
+    className: 'assignments-due-now'
   },
   {
     data: [{_id: 0, name: 'No Assignments'}],
     expand: false,
     header: 'Past Due',
-    context: 'late'
+    context: 'late',
+    className: 'assignments-past-due'
   },
   {
     data: [{_id: 0, name: 'No Assignments'}],
     expand: false,
     header: 'Turned In',
-    context: 'turnedIn'
+    context: 'turnedIn',
+    className: 'assignments-turned-in'
   }
 ];
 

@@ -3,16 +3,21 @@
 //Import Config: Configuration layer
 @import 'config';
 
-//Import Base layer: 
+//Import Reset
 @import 'reset';
-@import 'mixins';
-@import 'base';
 
 //Import Modules: Specific Objects
-@import 'buttons';
+@import 'buttons/index';
+@import 'modules/index';
 @import 'icons';
 @import 'inputs';
 @import 'forms';
 @import 'lists';
+
+//Import Base layer:
+@import 'mixins';
+@import 'typography';
+@import 'layout';
+@import 'base';
 
 @import 'state';

@@ -1,0 +1,101 @@
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  min-height: 100%;
+  background-color: $color-scheme5;
+  width: 100%;
+  position: relative;
+}
+
+.main-nav {
+  flex: 0 1 7%;
+  width: 7%;
+  min-height: 100%;
+  position: fixed;
+  background-color: $color-scheme3;
+
+  ul {
+    display: flex;
+    flex-flow: column wrap;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: block;
+    flex-grow: 1;
+    list-style-type: none;
+    text-align: center;
+
+    &:first-child,
+    &:last-child {
+      flex-grow: 0;
+    }
+
+    &:first-child a {
+      height: 80px;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .cadet-logo {
+    max-height: 100%;
+    max-width: auto;
+    height: 50px;
+    width: auto;
+  }
+
+  a {
+    display: block;
+    padding: 40px 0;
+    font-size: 1.75em;
+    background-color: $color-scheme3;
+
+    &:hover {
+      background-color: darken($color-scheme3, 5%);
+      text-decoration: none;
+    }
+  }
+}
+
+main {
+  flex: 0 1 93%;
+  min-height: 100%;
+  display: flex;
+  flex-flow: column wrap;
+  padding-left: 7%;
+}
+
+.main-header {
+  flex: 0 1 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: $color-scheme4;
+  height: 80px;
+
+  h1 {
+    flex: 0 1 90%;
+    padding-left: 1em;
+    margin: 0;
+    line-height: 80px;
+  }
+
+  .login {
+    flex: 0 1 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    a {
+      color: $color-scheme5;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

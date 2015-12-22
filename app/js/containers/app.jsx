@@ -42,26 +42,28 @@ var App = React.createClass({
 
   render: function() {
     return (
-      <div>
-        <HeaderBox
-          {...this.props.auth[0]}
-          changeLoggedInStatus={this.props.authActions.changeLoggedInStatus} />
+      <div className="wrapper">
         <AsideBox
-          changeViewDashboard={this.props.viewActions.changeViewDashboard}
-          changeViewCourseCreator={this.props.viewActions.changeViewCourseCreator} />
-        {(this.props.view[0].currentView === 'course-creator')
-          ? <CourseCreator
-              initCourse={this.props.courseActions.initCourse}
-              sortAssignments={this.props.assignmentActions.sortAssignments}
-              receiveAssignments={this.props.assignmentActions.receiveAssignments}
-              changeViewDashboard={this.props.viewActions.changeViewDashboard} />
-          : <Dashboard
-              {...this.props}
-              handleExpandClick={this.props.assignmentActions.handleExpandClick}
-              handleSubmit={this.props.assignmentActions.handleSubmit}
-              updateAssignments={this.props.assignmentActions.updateAssignments}
-            />
-        }
+            changeViewDashboard={this.props.viewActions.changeViewDashboard}
+            changeViewCourseCreator={this.props.viewActions.changeViewCourseCreator} />
+        <main>
+          <HeaderBox
+            {...this.props.auth[0]}
+            changeLoggedInStatus={this.props.authActions.changeLoggedInStatus} />
+          {(this.props.view[0].currentView === 'course-creator')
+            ? <CourseCreator
+                initCourse={this.props.courseActions.initCourse}
+                sortAssignments={this.props.assignmentActions.sortAssignments}
+                receiveAssignments={this.props.assignmentActions.receiveAssignments}
+                changeViewDashboard={this.props.viewActions.changeViewDashboard} />
+            : <Dashboard
+                {...this.props}
+                handleExpandClick={this.props.assignmentActions.handleExpandClick}
+                handleSubmit={this.props.assignmentActions.handleSubmit}
+                updateAssignments={this.props.assignmentActions.updateAssignments}
+              />
+          }
+         </main>
       </div>
     );
   }
